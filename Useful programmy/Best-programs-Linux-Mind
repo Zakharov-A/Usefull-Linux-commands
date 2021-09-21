@@ -1,10 +1,17 @@
 
 Commands to install
 
+Setting Gethub
+
+sudo dnf install git-all
+
+
 
 Setting IDLE
 
 sudo apt-get install idle
+
+
 
 Setting VS code
 
@@ -20,9 +27,7 @@ sudo apt update
 
 sudo apt install code
 
-Setting Gethub
 
-sudo dnf install git-all
 
 
 
