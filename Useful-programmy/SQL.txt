@@ -1,0 +1,11 @@
+
+
+Язык SQL используется в любой программе и на любом веб сайте,
+ где идет работа с базами данных. В ходе курса вы изучите язык SQL,
+ а также научитесь работать с базами данных на примере MySQL.
+
+1) Курс по SQL на itProger: https://itproger.com/course/sql
+2) Программма XAMPP: https://www.apachefriends.org/ru/inde...
+3) Программа OpenServer: https://ospanel.io/
+4) Программма MAMP: https://www.mamp.info/en/
+5) Видео по работе с графическим интерфейсом PhpMyAdmin: https://www.youtube.com/watch?v=IVel5...
