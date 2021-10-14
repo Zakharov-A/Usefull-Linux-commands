@@ -28,6 +28,13 @@ sudo apt update
 sudo apt install code
 
 
+Установить XAMPP на Linux Mint 20
+
+sudo apt update
+sudo apt install net-tools
+wget https://www.apachefriends.org/xampp-files/7.4.15/xampp-linux-x64-7.4.15-0-installer.run
+sudo chmod + x xampp-linux-x64-7.4.15-0-installer.run
+
 
 
 
