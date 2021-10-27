@@ -1,0 +1,4 @@
+xinput set-prop 10 "Device Enabled" 0
+
+
+xinput set-prop 10 "Device Enabled" 0
