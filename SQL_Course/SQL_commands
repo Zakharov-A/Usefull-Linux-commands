@@ -1,0 +1,26 @@
+sudo service mysql start
+mysql -u root -p -h 127.0.0.1
+SELECT table_name FROM information_schema.tables;
+USE testdb;
+SELECT * FROM testdb.city;
+SELECT * FROM testdb.phone;
+
+sudo /opt/lampp/lampp stop
+
+
+Смена пароля от MySQL
+
+После того, как пароль root пользователя [1] MySQL установлен, его можно изменить. Наиболее простой способ следующий:
+
+    Подключиться по SSH к виртуальному серверу;
+    Подключиться к MySQL как пользователь root при помощи команды:
+
+mysql –u root –p
+
+    Затем нажать Enter, указать пароль и снова нажать Enter;
+    Выполнить следующие команды:
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpass');
+quit
+
+После этого пароль будет изменён на newpass.
