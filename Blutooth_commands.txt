@@ -1,0 +1,2 @@
+apt install blueman
+service bluetooth start
