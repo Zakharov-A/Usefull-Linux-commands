@@ -1,0 +1,5 @@
+Сделать hard reset. Копирую прямо из истории команд как есть:
+
+git reset --hard f41fb592c8fd92c19f77efd96f341298e4175a7b
+git commit -m 'Revert to f41fb592c'
+git push origin -f
