@@ -1,0 +1,28 @@
+grep -v '#' /etc/apt/sources.list | sort -u     просмотр репозитория
+
+
+nano /etc/apt/sources.list   файл с записью репозитория
+
+
+
+Обновление системы Kali Linux
+
+Kali Linux имеет три официальные ветки репозиториев. 
+
+kali-last-snapshot (Kali последний снимок) самая стабильная ветка репозитория. О
+deb http://http.kali.org/kali kali-last-snapshot main non-free contrib
+
+
+kali-experimental (экспериментальная Kali)
+deb http://http.kali.org/kali kali-experimental main non-free contrib
+
+
+kali-rolling (дословно прокатывание, катание или обкатка) 
+deb https://http.kali.org/kali kali-rolling main non-free contrib
+
+атем нужно поочерёдно выполнить ряд команд:
+sudo apt update
+sudo apt upgrade
+
+
+
