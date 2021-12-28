@@ -1,0 +1,38 @@
+Links to sites in the browser
+
+1. name    Python3 Selfedu
+           link    https://www.youtube.com/playlist?list=PLA0M1Bcd0w8xIdFNA95aQrwJ_GQJEV8ko
+           link to image   https://i.ytimg.com/vi/94NGLFfBLqg/maxresdefault.jpg
+2. name    Python Tproger
+	   link    https://tproger.ru/problems/python-3-exercises-for-beginners-geekbrains/
+	   link to image    https://sun9-44.userapi.com/impg/c857428/v857428567/23eb44/5bLOTWCvKIk.jpg?size=807x454&quality=96&sign=e281045face87d706e162bfaeb03d12c&type=album
+3. name    ОС Linux для начинающих
+	   link    https://www.youtube.com/playlist?list=PL0lO_mIqDDFUwVWvVitxG2oXA6a-Nq-Qq
+	   link to image    https://img5.goodfon.ru/original/1024x1024/c/54/kiberpank-2077-devushka-kiborg-monitory-robot-oshibka-404-is.jpg
+4. name    Command Line с нуля (Bash, Unix)
+	   link    https://www.youtube.com/playlist?list=PLRs8EELOYKc42r19Gc7CACRyI1R_5a5TC 
+	   link to image    https://miro.medium.com/max/724/1*ykrn2jxtj4nrzbb-7Wzugw.jpeg
+5. name GitHub
+	   link    https://github.com/
+	   link to image
+6. name     Kali Best
+	   link    https://www.youtube.com/c/SECCURITYTESTING
+	   link to image    https://steamuserimages-a.akamaihd.net/ugc/1720912338237961307/8A4097480A1BCC1774D383D81A7BFA764A32463B/?imw=1024&imh=1024&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true
+7. name     SQL
+	   link    https://www.youtube.com/playlist?list=PLSn-RgjO4U6TAVsa9RWcGXrUdFUXM7weE
+	   link to image    https://pw.artfile.me/wallpaper/03-11-2014/650x385/fentezi-devushki-erotika-cyberpunk-okno--879756.jpg
+8. name    MySQL
+	   link    https://www.flenov.info/books/read/free-sql-book/101
+	   link to image     https://i.playground.ru/p/xL0G1p8rlEm_Qo9wj8iuVw.png
+9. name    PythonToday
+	   link    https://www.youtube.com/c/PythonToday/playlists
+	   link to image     https://storage.myseldon.com/news_pict_94/94849BEACCB9B3F9B70FBCA34EFF26D0
+10. name      Py_Today_git
+	   link     https://github.com/pythontoday/python_from_zero/blob/master/01-Python-variables/main_variables.py
+	   link to image     https://1.bp.blogspot.com/--HcCOlmt294/XmU5MX_LRkI/AAAAAAAADLk/YtmzZzIiqecudX-0MObZlOw_9-2_IY8xQCLcBGAsYHQ/s1600/120.jpg
+11. name    Kali Linux  
+	   link    https://www.youtube.com/playlist?list=PLtCrClXCxszGZbFfmyMIBYnMRdIrkvodz
+	   link to image    https://img2.rule34.us/images/c7/4c/c74c180aa1c8686137c6b63c98efef50.jpeg 
+12. name    DIGITALIZE SQL
+	   link    https://www.youtube.com/watch?v=WpojDncIWOw&t=664s
+	   link to image     https://sun9-45.userapi.com/UbxZlx7MbOr6pdUr-rIb7lQggWpnW8S2FC4LxA/phqdeEvgz-U.jpg    
