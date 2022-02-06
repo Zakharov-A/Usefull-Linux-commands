@@ -1,0 +1,136 @@
+Kali Linux
+
+Скачать пакет с официального сайта: https://www.apachefriends.org/download.html
+
+1. cd Downloads
+2. chmod 755 xampp-linux-*-installer.run
+3. sudo ./xampp-linux-*-installer.run
+
+
+
+
+How to install and start XAMPP server on Kali Linux
+Heyan Maurya Last Updated: March 14, 2021 Kali Linux, Linux 3 Comments
+
+Although if you are on Linux systems, the best way to install the LAMP server is the command line. Just run few commands and you will have the Apache, MySQL, and PHP on your system. However, those don’t want to convert their Linux into a webserver natively to test different web applications, they can use a third-party application such as XAMPP by Bitnami.
+
+XAMPP is a quick way to have Apache, PHP, Perl, and MySQL on various Linux systems including KALI. You just need to download its executable file to run on the system.
+
+requirements:
+
+    XAMPP executable file
+    Non-root user with sudo access.
+
+Here are the steps to install XAMPP on KALI Linux
+
+To perform this tutorial, we are using KALI 2020, however, the steps will be the same for earlier versions of KALI as well.
+
+Step 1: Open browser on your Kali Linux.
+
+Step 2: Go to XAMPP official download page, here is the link for that.
+
+Step 3: Open Command Terminal, the shortcut is CTRL+ALT+T.
+
+Step 4: Switch to Download Directory, by default files getting from the browser, will go to this place. Type:
+
+cd Downloads
+
+Step 5: Change the permission of downloaded XAMPP installer to 755, so that anyone can read and execute but only the owner of the file will have the right to write or delete the file. The command is:
+
+chmod 755 xampp-linux-*-installer.run
+
+Step 6: Finally, run the installer to get the setup wizard on Kali Linux, it will be in GUI format. So, just like any Windows program, we can install it on this penetration testing Linux distro as well.
+
+sudo ./xampp-linux-*-installer.run
+
+Step 7: Follow the guided installation and in the “Select components” step, mark both “XAMPP Core files” and “XAMPP Developer files“.
+
+XAMPP on Kali Linux
+
+Step 8:  Now, start  XAMPP on Kali Linux and go to Manage Server Tab and start the modules you want to use such as Apache web server, MySQL Database, and FTP.
+
+Start XAMPP APache and MySQL
+
+Step 9: To test Apache Webserver and MySQL via PHPMyAdmin of XAMPP on Kali Linux. Simply open the web browser and type:
+
+For Apache:
+
+http://127.0.0.1
+
+For phpMyAdmin:
+
+http://127.0.0.1/phpmyadmin
+
+Kali Linux start XAMPP Phpmyadmin and Apache
+
+Read more:
+
+    Install Krita software on Ubuntu 20.04 or 18.04 LTS
+    7 Steps to install Webmin on Ubuntu 20.04
+    How to open the Ubuntu file manager as a root user
+
+Related Posts
+Common Linux Shell commands to start using terminal
+
+Heyan Maurya Linux
+
+316 Views
+Common Linux Shell commands to start using terminal
+telegram on kali using tar.xz file
+
+Heyan Maurya Kali Linux, Linux
+
+26413 Views
+How to install Telegram on Kali Linux
+Qbittorrent GUI for Kali Linux
+
+Heyan Maurya Kali Linux
+
+How to install qBittorrent on Kali linux
+Start SNAPD service on Kali or Ubuntu Linux
+
+Heyan Maurya Linux
+
+8427 Views
+Solve error: cannot communicate with server dial unix /run/snapd.socket
+Comments (3)
+
+    Dheeraj September 8, 2020
+    Reply
+
+    All the setup opening in terminal, i cannot open in GUI..Please Help
+        alex welliam September 22, 2021
+        Reply
+
+        dude GUI not able on kali linux only CLI
+    ZOSHOSH August 30, 2021
+    Reply
+
+    Thanks for your guidance. I was thinking that it will be difficult to install xampp on Linux but you made it easy.
+
+Leave a Reply
+
+Save my name, email, and website in this browser for the next time I comment.
+
+This site uses Akismet to reduce spam. Learn how your comment data is processed.
+ADVERTISEMENT
+ADVERTISEMENT
+Related Posts
+
+    Best Gnome system monitor alternatives
+    7 Best Gnome system monitor alternative Linux …
+    January 29, 2021
+    telegram on kali using tar.xz file
+    How to install Telegram on Kali Linux
+    November 26, 2020
+    Best free to use Linux Server distributions for 2021
+    5 Best free to use Linux Server …
+    February 16, 2021
+    Splunk Dashboard installed on Debian Linux
+    How to Install Splunk on Debian 11 …
+    July 19, 2021
+    Tor browser installed successfully on Elementary OS
+    How to install Tor Browser in Elementary …
+    December 31, 2020
+
+ADVERTISEMENT
