@@ -1,0 +1,7 @@
+
+
+Установить django - pip install django
+
+Обновить pip  -  pip install --upgrade pip
+
+Запуск сервера -  python manage.py runserver
