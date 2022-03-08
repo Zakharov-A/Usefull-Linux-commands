@@ -1,0 +1,15 @@
+ gconelhero commented on Aug 29, 2020 •
+
+Digite no terminal:
+sudo mkdir /usr/lib/python2.7/dist-packages/scapy
+cd /usr/lib/python3/dist-packages/
+cp -avr scapy/* /usr/lib/python2.7/dist-packages/scapy
+
+Resolvido!
+
+Type in the terminal:
+sudo mkdir /usr/lib/python2.7/dist-packages/scapy
+cd /usr/lib/python3/dist-packages/
+cp -avr scapy/* /usr/lib/python2.7/dist-packages/scapy
+
+Solved!
