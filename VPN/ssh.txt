@@ -1,0 +1,10 @@
+ssh-keygen   Генерация
+nano ~/.ssh/id_rsa
+nano ~/.ssh/id_rsa.pub
+
+
+ssh-copy-id <>
+
+ssh root@168.100.8.246
+apt update && apt upgrade -y
+
