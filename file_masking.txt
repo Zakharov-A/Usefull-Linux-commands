@@ -1,0 +1,3 @@
+xxd -p calc.exe calc_damp.txt 
+
+xxd -r -p calc_damp.txt calc.exe 
