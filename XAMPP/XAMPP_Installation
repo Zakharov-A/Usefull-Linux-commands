@@ -6,6 +6,7 @@ Kali Linux
 2. chmod 755 xampp-linux-*-installer.run
 3. sudo ./xampp-linux-*-installer.run
 
+sudo rm -rf /opt/lampp
 
 
 
