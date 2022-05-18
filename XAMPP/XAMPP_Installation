@@ -8,7 +8,7 @@ Kali Linux
 
 sudo rm -rf /opt/lampp
 
-
+sudo /opt/lampp/xampp security
 
 How to install and start XAMPP server on Kali Linux
 Heyan Maurya Last Updated: March 14, 2021 Kali Linux, Linux 3 Comments
