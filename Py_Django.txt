@@ -1,9 +1,23 @@
+Развертывание Джанго
+
 virtualenv venv -p python3
-sourse venv/bin/activate
+source venv/bin/activate # Активировать окружение
+
+pip install django
+pip install --upgrade pip
+
+
 pip freeze > requirements.txt
 django-admin startproject main .
+django-admin startapp #authentication Название приложения
+
+python manage.py  #Справка
 
 
+python manage.py migrate
+python manage.py createsuperuser
+
+python manage.py runserver  # Запуск сервера
 
 Установить django - pip install django
 
