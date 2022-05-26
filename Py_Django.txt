@@ -1,4 +1,5 @@
 Развертывание Джанго
+sudo apt install python3-virtualenv
 
 virtualenv venv -p python3
 source venv/bin/activate # Активировать окружение
