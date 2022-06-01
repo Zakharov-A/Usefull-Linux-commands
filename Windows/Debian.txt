@@ -1,0 +1,15 @@
+wsl --list --online
+
+wsl --install -d Kali-Linux
+
+xxd Hello.txt  Открытие файлов в форме байтов
+
+xxd -c 1 -b Hello.txt  
+xxd -c 1 Hello.txt
+
+Форматирование файлов. 
+xxd -p calc.exe calc_dump
+xxd -r -p calc_dump calc.exe
+
+rm calc_dump
+
