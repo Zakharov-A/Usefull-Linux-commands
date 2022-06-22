@@ -1,5 +1,6 @@
 
 Установка 
+
  sudo apt install qemu-kvm qemu
  
  qemu-img create -f qcow2 ubuntu.qcow 10G
@@ -19,5 +20,26 @@ qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -soundhw ac97 -vga qxl -g
 
 
 qemu-system-x86_64 -hda ubuntu.qcow -m 2640 -enable-kvm -soundhw ac97 -vga qxl -global qxl-vga.vram_size=134217728
+
+Создание диска
+
+qemu-img create -f qcow2 debian.qcow 5G
+
+Начало установки
+
+qemu-system-x86_64 -hda debian.qcow -boot d -cdrom debian-11.3.0-amd64-netinst.iso -m 640
+
+Запуск
+
+qemu-system-x86_64 -hda debian.qcow -m 2640 -enable-kvm -soundhw ac97 -vga qxl -global qxl-vga.vram_size=134217728
+
+Создание диска
+
+qemu-img create -f qcow2 parrot.qcow 10G
+
+Начало установки
+
+qemu-system-x86_64 -hda parrot.qcow -boot d -cdrom Parrot-home-5.0.1_amd64.iso -m 2640
+
 
 
