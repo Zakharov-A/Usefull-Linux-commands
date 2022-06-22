@@ -1,0 +1,23 @@
+
+Установка 
+ sudo apt install qemu-kvm qemu
+ 
+ qemu-img create -f qcow2 ubuntu.qcow 10G
+
+qemu-system-x86_64 -hda ubuntu.qcow -boot d -cdrom ~/downloads/Linux/ubuntu-20.04.4-desktop-amd64.iso -m 640
+
+qemu-system-x86_64 -hda ubuntu.qcow -boot d -cdrom -m 640
+
+ctrl + alt + g
+
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm
+
+
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -soundhw ac97 -vga qxl
+
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -soundhw ac97 -vga qxl -global qxl-vga.vram_size=4294967
+
+
+qemu-system-x86_64 -hda ubuntu.qcow -m 2640 -enable-kvm -soundhw ac97 -vga qxl -global qxl-vga.vram_size=134217728
+
+
