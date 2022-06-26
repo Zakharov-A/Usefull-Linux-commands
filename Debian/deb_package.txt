@@ -1,2 +1,5 @@
+
+tar -xf archiveName.tar.gz
+
 dpkg -i package-name-here.deb
 
