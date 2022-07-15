@@ -12,12 +12,6 @@ pip freeze > requirements.txt
 django-admin startproject main .
 django-admin startapp #authentication Название приложения
 
-Настройка файла settings.py
-
-TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
 
 python manage.py  #Справка
 

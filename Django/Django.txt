@@ -9,3 +9,19 @@ django-admin startapp #authentication Название приложения
 
 django-admin startapp authentication
 django-admin startapp shop
+
+Настройка файла settings.py
+
+TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+
+Создание супер пользователя
+
+python manage.py createsuperuser
+
+# Запуск сервера
+
+python manage.py runserver  
+
