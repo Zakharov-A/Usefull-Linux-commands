@@ -1,0 +1,11 @@
+
+virtualenv venv -p python3
+source venv/bin/activate # Активировать окружение
+pip install django
+
+pip freeze > requirements.txt
+django-admin startproject main .
+django-admin startapp #authentication Название приложения
+
+django-admin startapp authentication
+django-admin startapp shop
