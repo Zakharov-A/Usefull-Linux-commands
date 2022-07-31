@@ -18,13 +18,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )  
 
-
-
-Миграция:
-
-python manage.py migrate
-
-
 Создание супер пользователя
 
 python manage.py createsuperuser
@@ -32,16 +25,4 @@ python manage.py createsuperuser
 # Запуск сервера
 
 python manage.py runserver  
-
-
-{% extends 'base-page.html' %}
-{% load static %}
-
-{% block title %}
-    < Page Name >
-{% endblock title %}
-
-{% block container %}
-    < Current Page Content >
-{% endblock container %}
 
