@@ -26,3 +26,10 @@ python manage.py createsuperuser
 
 python manage.py runserver  
 
+// ----
+Установка из файла requirements
+
+virtualenv venv -p python3
+source venv/bin/activate # Активировать окружение
+pip install -r requirements.txt
+// ----
