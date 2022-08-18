@@ -33,3 +33,11 @@ virtualenv venv -p python3
 source venv/bin/activate # Активировать окружение
 pip install -r requirements.txt
 // ----
+
+// ----
+(На всякий случай: браузер для SQLite, упомянутый в видео, можно установить с помощью этих команд:
+$ sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
+$ sudo apt-get update
+$ sudo apt-get install sqlitebrowser ) 
+// ----
+
