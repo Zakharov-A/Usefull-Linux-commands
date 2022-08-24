@@ -29,8 +29,11 @@ python manage.py runserver
 // ----
 Установка из файла requirements
 
+sudo apt install python3-virtualenv
+
+
 virtualenv venv -p python3
-source venv/bin/activate # Активировать окружение
+source venv/bin/activate 
 pip install -r requirements.txt
 // ----
 
