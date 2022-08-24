@@ -44,3 +44,17 @@ $ sudo apt-get update
 $ sudo apt-get install sqlitebrowser ) 
 // ----
 
+
+// ---- Миграция ----
+python manage.py makemigrations
+python manage.py migrate
+
+// ----
+
+// ---- Пишем тесты (переносим требования к БД в код тестов) ----
+python manage.py dumpdata -o mydata.json.gz
+
+ python manage.py test shop.tests --failfast
+ 
+// ----
+
