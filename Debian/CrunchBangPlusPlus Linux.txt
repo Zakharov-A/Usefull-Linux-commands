@@ -1,0 +1,12 @@
+
+
+If you do not want to run this script now, you can run it at a later date 
+  by entering the command "cbpp-welcome" in your terminal.
+  
+cbpp-welcome
+
+
+sudo apt-get update
+
+sudo apt-get dist-upgrade
+
