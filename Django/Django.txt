@@ -1,7 +1,10 @@
 
 virtualenv venv -p python3
 source venv/bin/activate # Активировать окружение
+
 pip install django
+pip install --upgrade pip
+
 
 pip freeze > requirements.txt
 django-admin startproject main .
@@ -57,4 +60,13 @@ python manage.py dumpdata -o mydata.json.gz
  python manage.py test shop.tests --failfast
  
 // ----
+
+// ----  Cчитыванием необходимой информации непосредственно с HTML-страницы стороннего сайта. Это действие носит название скрейпинг (парсинг) сайта.
+
+Для этой цели будут использованы две популярные Python библиотеки: beautifulsoup4 и requests. Установить их можно с помощью двух терминальных команд:
+
+pip install beautifulsoup4
+pip install requests
+
+/ ----
 
