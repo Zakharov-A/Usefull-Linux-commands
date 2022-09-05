@@ -1,4 +1,9 @@
 
+ Для этой цели будут использованы две популярные Python библиотеки: beautifulsoup4 и requests. Установить их можно с помощью двух терминальных команд:
+
+pip install beautifulsoup4
+pip install requests
+
 
 
 import requests
