@@ -1,0 +1,29 @@
+
+
+sudo apt-get update
+
+sudo apt-get install wireshark tshark
+
+sudo tshark
+
+sudo tshark -D Посмотреть доступные интерфейсы
+
+sudo tshark -i enp0s3
+sudo tshark -i "номер в списке"
+
+
+Практические занятия по курсу "Компьютерные сети"
+https://goo.gl/YP3l83
+
+Лекции по курсу  "Компьютерные сети" 
+https://goo.gl/0aIOuf
+
+Ссылка для скачивания Wireshark:
+https://www.wireshark.org/
+
+Ссылки на документы RFC с описанием протоколов:
+http://www.ietf.org/rfc/rfc791.txt - IP (используется в видео)
+http://www.ietf.org/rfc/rfc793.txt - TCP
+http://www.ietf.org/rfc/rfc2131.txt - DHCP
+http://www.ietf.org/rfc/rfc792.txt - ICMP
+http://www.ietf.org/rfc/rfc826.txt - ARP
