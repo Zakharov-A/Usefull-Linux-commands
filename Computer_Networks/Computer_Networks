@@ -29,3 +29,6 @@ http://www.ietf.org/rfc/rfc793.txt - TCP
 http://www.ietf.org/rfc/rfc2131.txt - DHCP
 http://www.ietf.org/rfc/rfc792.txt - ICMP
 http://www.ietf.org/rfc/rfc826.txt - ARP
+
+
+sudo dhclient -r
