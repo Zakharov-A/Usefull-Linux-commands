@@ -1,0 +1,14 @@
+
+/--DHCP--
+sudo dhclient -r
+sudo dhclient
+/----
+
+/--HCMP--
+ping 77.88.55.66
+/----
+
+/--ARP--
+arp -e
+
+/----
