@@ -10,5 +10,21 @@ ping 77.88.55.66
 
 /--ARP--
 arp -e
+/----
+
+/--TCP--
 
 /----
+
+/--DNC--
+sudo apt-get install dnsutils
+nslookup www.yandex.ru
+
+/----
+
+/--FTP--
+
+/----
+
+sudo apt update
+sudo apt install filezilla
