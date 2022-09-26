@@ -21,6 +21,15 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )  
 
+# Миграция:
+
+python manage.py migrate
+
+Создание супер пользователя
+
+python manage.py createsuperuser
+
+
 Создание супер пользователя
 
 python manage.py createsuperuser
