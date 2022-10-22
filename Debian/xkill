@@ -1,0 +1,19 @@
+
+
+sudo apt install xorg-xkill
+
+xkill
+
+Используйте команду "kill"
+ps aux | grep [имя программы]
+kill [ID процесса]
+
+Используйте команды "pgrep" и "pkill"
+pkill [имя программы]
+pgrep [имя программы]
+pkill [ID процесса]
+
+Уничтожить все экземпляры процесса с помощью "killall"
+killall firefox
+killall [имя программы]
+
