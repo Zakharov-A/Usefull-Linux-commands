@@ -1,0 +1,7 @@
+программа определения цвета debian
+
+  https://www.sttmedia.com/download=PipetteDeb64
+  
+dpkg -i pipette_22.10.22-1_amd64.deb
+
+pipette-stt
