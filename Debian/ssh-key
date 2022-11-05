@@ -1,0 +1,12 @@
+ssh-keygen
+
+nano ~/.ssh/id_rsa
+
+nano ~/.ssh/id_rsa.pub
+
+
+nano sshd_config
+
+
+sudo service ssh restart
+
