@@ -1,0 +1,12 @@
+rm -r Dir1
+
+
+sudo dpkg -i virtualbox-7.0_7.0.2-154219_Debian_bullseye_amd64.deb
+
+apt-get remove --purge virtualbox-6.1
+или
+apt-get remove --purge virtualbox*
+
+sudo dpkg -r virtualbox && sudo apt autoremove -y && sudo apt purge -y virtualbox
+
+
