@@ -3,8 +3,10 @@ ssh-keygen
 nano ~/.ssh/id_rsa
 
 nano ~/.ssh/id_rsa.pub
+    
+ssh-copy-id root@168.100.8.246   
 
-
+sudo nano /etc/ssh/sshd_config
 nano sshd_config
 
 
