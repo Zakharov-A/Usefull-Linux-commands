@@ -1,0 +1,45 @@
+
+Removing a virtual box
+
+whereis virtualbox
+
+Узнаем имя пакета
+
+dpkg -S fullpath где fullpath полный путь к исполняемому файлу (взять из результата предыдущей команды)
+
+Удаляем используя имя пакета
+
+dpkg --remove packagename где packagename имя пакета (взять из результата предыдущей команды)
+
+
+
+
+дополнительные пути определения имени (помимо предложенного в соседнем ответе):
+
+уже по имени файла (если оно формировалось по принятым правилам и не изменялось впоследствии) можно определить имя пакета: это все символы до первого символа _. например, если имя файла — virtualbox-6.1_6.1.12-139181~Debian~buster_amd64.deb, то имя пакета, содержащегося внутри — virtualbox-6.1.
+
+если файл подвергался переименованию, но пока не удалён, можно узнать имя содержащегося в нём пакета, например, с помощью программы dpkg-deb:
+
+$ dpkg-deb -f virtualbox-6.1_6.1.12-139181~Debian~buster_amd64.deb Package
+virtualbox-6.1
+если файл не сохранился, но известно, что имя установленного пакета содержит определённую строку (например, "box"), то можно поискать в базе dpkg частичное совпадение:
+
+$ dpkg -l '*box*'
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                        Version                 Architecture Description
++++-===========================-=======================-============-===========
+ii  busybox                     1:1.30.1-4              amd64        Tiny utilit
+ii  virtualbox-6.1              6.1.12-139181~Debian~bu amd64        blablablabl
+...
+
+
+
+
+впрочем, и программам apt/apt-get можно передавать не только точное имя пакета, но и маску, под которую подпадает имя:
+
+$ sudo apt-get remove 'virtualbox*'
+
+
+
