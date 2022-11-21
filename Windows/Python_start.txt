@@ -1,0 +1,14 @@
+pip freeze
+
+pip install django
+
+django-admin
+
+
+
+
+
+
+
+
+
