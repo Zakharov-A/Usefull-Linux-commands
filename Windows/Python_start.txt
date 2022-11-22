@@ -1,8 +1,31 @@
+Решение проблемы:
+- Открываем терминал PowerShell от админа.
+- Вставляем и запускаем - Set-ExecutionPolicy RemoteSigned
+- На вопрос отвечаем - A
+
+
+mkdir namedir
+
+python3 -m venv venv or python3 -m venv venv
+
+venv\Scripts\activate
+
+
+
+
+
+
+
+
 pip freeze
 
 pip install django
 
 django-admin
+
+django-admin startproject First
+
+
 
 
 
