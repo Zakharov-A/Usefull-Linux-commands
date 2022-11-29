@@ -42,7 +42,9 @@ python manage.py runserver
 
 
 
-#Запуск проекта через pycharm
+#Создание приложения
+
+python manage.py startapp product
 
 
 
