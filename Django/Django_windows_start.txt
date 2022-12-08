@@ -1,0 +1,11 @@
+# переход в папку store-server:
+C:\Users\rrnur>cd c:\course\store-server\
+
+#создание виртуального окружения:
+c:\course\store-server>python3 -m venv venv
+#активация окружения:
+c:\course\store-server>venv\Scripts\activate.bat
+#установка зависимостей:
+(venv) c:\course\store-server>pip install requests
+#команда установки LTS-версии джанги:
+pip install django==3.2.16
