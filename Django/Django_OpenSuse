@@ -1,6 +1,31 @@
 
+zypper update python3
+
+mkdir store-server
+
+#--environment setting--
 sudo zypper install python3-virtualenv
 
+#--creating an environment
+python3 -m venv venv
+#--or--
 virtualenv venv -p python3
 
+#--environment activation
 source venv/bin/activate
+
+#--installation django--
+pip install Django==3.2.16
+
+#--upgrade pip--
+python3 -m pip install --upgrade pip
+
+#--project creation--
+django-admin startproject 'name project'
+
+#--installad packages-- 
+pip freeze
+
+#--
+python3 manage.py runserver 
+
