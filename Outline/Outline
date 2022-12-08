@@ -1,0 +1,28 @@
+https://support.getoutline.org/s/article/Install-Outline-on-Linux?language=ru
+
+sudo chmod u+x Outline-Client.AppImage
+
+sudo chmod u+x Outline-Manager.AppImage
+
+apt update && apt upgrade -y
+
+
+{"apiUrl":"https://168.100.8.246:58452/YcBjvwiN_eJsTcVxfi9Tlw","certSha256":"6459F312431C22FAFA82679B496A786428C508EB1DEA1860563E49EE872A133D"}
+
+
+CONGRATULATIONS! Your Outline server is up and running.
+
+To manage your Outline server, please copy the following line (including curly
+brackets) into Step 2 of the Outline Manager interface:
+
+
+{"apiUrl":"https://168.100.8.246:58452/YcBjvwiN_eJsTcVxfi9Tlw","certSha256":"6459F312431C22FAFA82679B496A786428C508EB1DEA1860563E49EE872A133D"}
+
+
+If you have connection problems, it may be that your router or cloud provider
+blocks inbound connections, even though your machine seems to allow them.
+
+Make sure to open the following ports on your firewall, router or cloud provider:
+- Management port 58452, for TCP
+- Access key port 44477, for TCP and UDP
+

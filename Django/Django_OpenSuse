@@ -26,6 +26,6 @@ django-admin startproject 'name project'
 #--installad packages-- 
 pip freeze
 
-#--
+#-- Running the server --
 python3 manage.py runserver 
 
