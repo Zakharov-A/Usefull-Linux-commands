@@ -1,27 +1,30 @@
 
 #--environment setting--
-
+sudo install python3-virtualenv
 
 #--creating an environment
-
+python3 -m venv venv
 
 #--environment activation
-
+source venv/bin/activate
 
 #--installation django--
-
+pip install Django==3.2.16
 
 #--upgrade pip--
-
+python3 -m pip install --upgrade pip
 
 #--project creation--
-
+django-admin startproject 'name project'
 
 #--installad packages-- 
+pip freeze
 
+#--View commands--
+python3 manage.py --help
 
 #-- Running the server --
-
+python3 manage.py runserver
 
 
 
