@@ -20,13 +20,14 @@ django-admin startproject 'name project'
 #--installad packages-- 
 pip freeze
 
-#--View commands--
+#--view commands--
 python3 manage.py --help
 
-#-- Running the server --
+#-- running the server --
 python3 manage.py runserver
 
-
+#--app creation--
+python3 manage.py startapp 'app name'
 
 
 
