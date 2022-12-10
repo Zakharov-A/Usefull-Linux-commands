@@ -1,0 +1,49 @@
+# переход в папку store-server:
+C:\Users\rrnur>cd c:\course\store-server\
+
+#создание виртуального окружения:
+c:\course\store-server>python3 -m venv venv
+#активация окружения:
+c:\course\store-server>venv\Scripts\activate.bat
+#установка зависимостей:
+(venv) c:\course\store-server>pip install requests
+#команда установки LTS-версии джанги:
+pip install django==3.2.16
+
+
+# Запуск проекта через Терминал
+
+Решение проблемы:
+- Открываем терминал PowerShell от админа.
+- Вставляем и запускаем - Set-ExecutionPolicy RemoteSigned
+- На вопрос отвечаем - A
+
+#--environment setting--
+sudo install python3-virtualenv
+
+#--creating an environment
+python3 -m venv venv
+
+#--environment activation
+venv\Scripts\activate
+
+#--installation django--
+pip install Django==3.2.16
+
+#--upgrade pip--
+python3 -m pip install --upgrade pip
+
+#--project creation--
+django-admin startproject 'name project'
+
+#--installad packages-- 
+pip freeze
+
+#--view commands--
+python3 manage.py --help
+
+#-- running the server --
+python3 manage.py runserver
+
+#--app creation--
+python3 manage.py startapp 'app name'
