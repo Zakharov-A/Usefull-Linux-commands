@@ -1,0 +1,17 @@
+
+
+sudo apt install virtualbox-guest-x11
+
+xrandr
+
+xrandr --output Virtual1 --mode 1360x768
+
+Для того чтобы продолжить загрузку системы с новым разрешением, нажмите сочетание клавиш Ctrl+X. Если это не LiveCD, а обычная система, то вы можете настроить выбор разрешения при каждой загрузке. Для этого откройте файл /etc/default/grub и пропишите нужное значение в параметре GRUB_GFXPAYLOAD_LINUX:
+
+sudo vi /etc/default/grub
+
+GRUB_GFXPAYLOAD_LINUX = 1024x768
+
+Затем обновите конфигурацию grub:
+
+sudo update-grub2
