@@ -29,7 +29,13 @@ python3 manage.py runserver
 #--app creation--
 python3 manage.py startapp 'app name'
 
+#--install Pillow--
+python3 -m pip install Pillow
 
+#--migration(s) part 1--
+python3 manage.py makemigrations
+#--migration(s) part 2--
+python3 manage.py migrate
 
 
 
