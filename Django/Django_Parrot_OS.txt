@@ -37,9 +37,16 @@ python3 manage.py makemigrations
 #--migration(s) part 2--
 python3 manage.py migrate
 
+#--ipython and shell_plus--
+pip install django-extensions
+pip install ipython
 
 
+./manage.py shell_plus
+from products.models import ProductCategory
 
+#-- User creation --
+python3 manage.py createsuperuser
 
 
 
