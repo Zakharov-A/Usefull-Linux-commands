@@ -40,8 +40,12 @@ python3 manage.py migrate
 #--ipython and shell_plus--
 pip install django-extensions
 pip install ipython
+идем в settings.py ->  INSTALLED_APPS и добавляем приложение django_extensions
 
+запускаем через ./manage.py shell_plus
+django-extensions - автоматически импортирует нужные нам модели и классы(например, ProductCategory, Product и другие, о которых узнаете позже)
 
+ipyhton - для удобства использования терминала, дает возможность вводить команды clear, cd, pwd не открывая новый
 ./manage.py shell_plus
 from products.models import ProductCategory
 
@@ -58,6 +62,9 @@ python3 manage.py loaddata products/fixtures/categories.json
 
 python3 manage.py loaddata products/fixtures/goods.json
 ./manage.py loaddata products/fixtures/goods.json
+
+
+
 
 
 
