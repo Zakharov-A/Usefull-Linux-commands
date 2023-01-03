@@ -48,6 +48,22 @@ from products.models import ProductCategory
 #-- User creation --
 python3 manage.py createsuperuser
 
+#--dumpdata--
+python3 manage.py dumpdata products.ProductCategory > categories.json
+./manage.py dumpdata products.Product > goods.json
+
+#--loaddate from fixtures
+python3 manage.py loaddata products/fixtures/categories.json
+./manage.py loaddata products/fixtures/categories.json
+
+python3 manage.py loaddata products/fixtures/goods.json
+./manage.py loaddata products/fixtures/goods.json
+
+
+
+
+
+
 
 
 Развертывание Джанго
