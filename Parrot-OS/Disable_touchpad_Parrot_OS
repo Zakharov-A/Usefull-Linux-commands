@@ -1,0 +1,12 @@
+
+sudo apt install xinpu
+
+xinput list
+
+xinput set-prop 11 "Device Enabled" 0
+
+xinput set-prop 11 "Device Enabled" 
+
+
+
+
