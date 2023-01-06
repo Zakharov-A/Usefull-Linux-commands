@@ -34,8 +34,10 @@ python3 -m pip install Pillow
 
 #--migration(s) part 1--
 python3 manage.py makemigrations
+./manage.py makemigrations
 #--migration(s) part 2--
 python3 manage.py migrate
+./manage.py migrate
 
 #--ipython and shell_plus--
 pip install django-extensions
@@ -51,6 +53,7 @@ from products.models import ProductCategory
 
 #-- User creation --
 python3 manage.py createsuperuser
+./manage.py createsuperuser
 
 #--dumpdata--
 python3 manage.py dumpdata products.ProductCategory > categories.json
@@ -62,6 +65,10 @@ python3 manage.py loaddata products/fixtures/categories.json
 
 python3 manage.py loaddata products/fixtures/goods.json
 ./manage.py loaddata products/fixtures/goods.json
+
+#--app users creation--
+python3 manage.py startapp users
+./manage.py startapp users
 
 
 
