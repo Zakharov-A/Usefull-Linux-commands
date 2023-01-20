@@ -49,6 +49,8 @@ django-extensions - автоматически импортирует нужны
 
 ipyhton - для удобства использования терминала, дает возможность вводить команды clear, cd, pwd не открывая новый
 ./manage.py shell_plus
+python3 manage.py shell_plus
+
 from products.models import ProductCategory
 
 #-- User creation --
