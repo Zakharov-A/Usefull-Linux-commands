@@ -51,6 +51,15 @@ ipyhton - для удобства использования терминала,
 ./manage.py shell_plus
 python3 manage.py shell_plus
 
+User.objects.all()
+User.objects.last().first_name
+User.objects.last().password
+User.objects.last().delete()
+
+
+
+
+
 from products.models import ProductCategory
 
 #-- User creation --
