@@ -43,7 +43,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 Затем обновите профиль, запустив:
 
-Shell
+. ~/.profile
 source ~/.profile
 Установив Go и настроив пути среды, давайте подтвердим, что все работаем должным образом через небольшую программу.
 
@@ -73,5 +73,16 @@ func main() {
    fmt.Printf("Hello, World!\n")
 }
 После запуска программы будет выводиться результат Hello, World!, тем самым доказывая, что Go-программы компилируются должным образом.
+
+
+1) cd ~
+
+2) vi .bashrc
+
+3) Inside .bashrc, enter the following: PATH=$PATH:/c/Go/bin
+
+export PATH=$PATH:/usr/local/go/bin
+
+
 
 
