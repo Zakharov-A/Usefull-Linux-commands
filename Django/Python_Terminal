@@ -17,3 +17,18 @@ User.objects.last().first_name
 User.objects.last().password
 User.objects.last().delete()
 
+from django.urls import reverse
+from users.models import User
+from users.models import EmailVerification
+r = EmailVerification.objects.last()
+link = reverse('users:email_verification', kwargs={'email': r.user.email, 'code': r.code})
+from django.conf import settings
+ verification_link = f'{settings.DOMAIN_NAME} {link}'
+
+verification_link
+'http://localhost:8000 /users/verify/li@li.com/538e7016-8247-49dc-87df-6d13593505ba/'
+
+user.is_verified_email
+
+
+
