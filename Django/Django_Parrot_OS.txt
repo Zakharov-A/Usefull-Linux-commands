@@ -83,6 +83,11 @@ python3 manage.py startapp users
 
 
 
+#--linters and formatters
+pip install flake8 isort
+flake8 .
+isort .
+
 
 
 
