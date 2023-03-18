@@ -8,141 +8,60 @@ sudo systemctl start postgresql
 systemctl status postgresql
 
 sudo su - postgres
-psql -c "alter user postgres with password 'MyStrongPassword'"
+
+Далее следуют другие полезные команды systemctl для управления службой Postgres в systemd.
+
+systemctl start postgresql
+systemctl restart postgresql
+systemctl stop postgresql
+
+Чтобы перечитать конфигурацию после перезагрузки выполните:
+
+systemctl reload postgresql
+
+под root
+passwd postgres
+
+psql -c "ALTER USER postgres WITH PASSWORD '6699';"
+
+vim /etc/postgresql/11/main/pg_hba.conf
+
+local all all md5
+
+systemctl restart postgresql
+
+su - postgres
 
 psql
 
-CREATE DATABASE testdb
-create database cloud_db;
-GRANT ALL PRIVILEGES ON DATABASE timeweb_db TO timeweb;
-\c testdb
+Чтобы создать базу данных с именем «test_db», выполните следующую SQL команду:
 
-SELECT table_name FROM information_schema.tables
-WHERE table_schema NOT IN ('information_schema','pg_catalog');
+CREATE DATABASE test_db;
 
-sudo systemctl restart postgresql
-sudo systemctl start postgresql
-sudo systemctl stop postgresql
+Теперь создадим базу данных с помощью следующей команды языка SQL:
 
+create database test2;
 
+Далее подключимся к этой базе данных для осуществления с ней взаимодействия. Для этого применяется команда \c (сокращение от connect), после которой указывается имя базы данных:
 
-Установка из репозитория Debian 11
-На Debian установить PostgreSQL можно прямо из системного репозитория. 
+\c test2
 
-Сначала обновите список пакетов. Запустите терминал и выполните:
+Затем создадим в этой базе данных таблицу с помощью команды:
 
-sudo apt update && sudo apt upgrade
-Пакет PostgreSQL находится в репозитории Debian, поэтому вы можете установить его с помощью утилиты apt. Для этого выполните:
+create table users (Id serial primary key, Name character varying(30), Age integer);
+Данная команда создает таблицу users, в которой будет три столбца - Id, Name и Age.
 
-sudo apt install postgresql postgresql-contrib
-После завершения установки проверьте статус соответствующей службы с помощью команды:
+После этого мы можем добавлять и получать данные из выше созданной таблицы. Вначале добавим в таблицу одну строку с помощью следующей команды:
 
-sudo systemctl status postgresql
-Если служба не запустилась автоматически, вы можете стартовать её вручную. Для этого выполните:
+insert into users (Name, Age) values ('Tom', 33);
+И в конце получим добавленные данные:
 
-sudo systemctl start postgresql
-Чтобы остановить работающую службу, выполните:
-
-sudo systemctl stop postgresql
-Прежде чем настраивать PostgreSQL на Debian, убедитесь в том, что служба запущена.
-
-Установка из официального репозитория СУБД
-Если вы хотите использовать только свежие версии Постгреса, рекомендуется использовать для установки и последующего обновления официальный репозиторий СУБД.
-
-Прежде всего необходимо добавить ключ подписи GPG. Это требование безопасности, чтобы подтвердить подлинность репозитория PostgreSQL. Чтобы сделать это, запустите терминал и выполните:
-
-curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /usr/share/keyrings/postgresql-keyring.gpg
-Теперь вы готовы добавить репозиторий Postgres. Используйте следующую команду:
-
-echo "deb [signed-by=/usr/share/keyrings/postgresql-keyring.gpg] http://apt.postgresql.org/pub/repos/apt/ bullseye-pgdg main" | sudo tee /etc/apt/sources.list.d/postgresql.list
-После успешной интеграции библиотеки PostgreSQL вы готовы к установке СУБД. Но перед этим рекомендуется обновить репозиторий системы с помощью команды:
-
-sudo apt update
-После обновления выполните PostgreSQL install на Debian:
-
-sudo apt install postgresql
-Установка завершена. Теперь можно переходить к базовой настройке СУБД.
-
-Базовая настройка
-При установке СУБД автоматически создаётся пользователь postgres. Вы можете использовать эту учётную запись для первого подключения.
-
-Переключитесь на пользователя postgres:
-
-sudo su - postgres
-Запустите утилиту psql — это оболочка для управления PostgreSQL:
-
-psql
-Теперь вы можете взаимодействовать с сервером PostgreSQL. Чтобы выйти из оболочки, введите:
-
-\q
-Вы можете использовать команду для доступа к командной строке Postgres без переключения пользователей:
-
-sudo -u postgres psql
-Однако пользователь postgres обычно используется только с локального хоста. Если, например, вы используете облачные базы данных, рекомендуется создать новую роль для подключения.
-
-Создание роли и базы данных
-Команда createuser позволяет создавать новые роли из командной строки. Только суперпользователи и роли с привилегиями CREATEROLE могут создавать новые роли.
-
-В следующем примере создадим новую роль с именем timeweb и базу данных с именем timeweb_db, а затем предоставим новой роли привилегии для управления базой данных.
-
-Сначала создайте новую роль:
-
-sudo su - postgres -c "createuser timeweb"
-Затем создайте новую БД:
-
-sudo su - postgres -c "createdb timeweb_db"
-Чтобы предоставить пользователю права доступа к базе данных, подключитесь к оболочке:
-
-sudo -u postgres psql
-Выполните следующий запрос, чтобы предоставить пользователю timeweb привилегии для управления базой данных timeweb_db:
-
-GRANT ALL PRIVILEGES ON DATABASE timeweb_db TO timeweb;
-Создавать новые роли и базы данных можно и сразу в оболочке СУБД. В таком случае синтаксис будет незначительно отличаться.
-
-Чтобы создать новую роль с паролем, выполните:
-
-create user cloud with password 'cloudtimeweb';
-Чтобы создать новую БД, выполните:
-
-create database cloud_db;
-Затем нужно также предоставить все привилегии командой GRANT ALL PRIVILEGES ON DATABASE … TO ….
-
-Настройка удалённого доступа
-По умолчанию сервер Postgres слушает только локальный интерфейс 127.0.0.1. Это может быть неудобно. Допустим, у вас есть сервер на Timeweb Cloud с установленной СУБД. Гораздо комфортнее будет подключаться к нему удалённо. Для этого нужно настроить сервер на прослушивание других сетевых интерфейсов. 
-
-Чтобы изменить конфигурацию, с помощью любого редактора откройте файл postgresql.conf. В этом примере используется редактор nano:
-
-sudo nano /etc/postgresql/12/main/postgresql.conf
-Найдите в файле конфигурации раздел CONNECTIONS AND AUTHENTICATION и строку #listen_addresses = 'localhost'. Измените значение строки на #listen_addresses = '*'. Если вы хотите, чтобы сервер слушал не все сетевые интерфейсы, а только выбранный, укажите его вместо звёздочки.
-
-Сохраните файл и перезапустите службу Postgres, чтобы изменения вступили в силу:
-
-sudo service postgresql restart
-Последний шаг — разрешение подключений из сети. Чтобы установить его, нужно отредактировать файл pg_hba.conf. Откройте его в редакторе:
-
-sudo nano /etc/postgresql/12/main/pg_hba.conf
-Найдите строку IPv4 local connections. Укажите нужную сеть. Например, вот так:
+select * from users;
 
 
 
 
 
 
-# Create the file repository configuration:
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-
-# Import the repository signing key:
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-
-# Update the package lists:
-sudo apt-get update
 
 
-# Install the latest version of PostgreSQL.
-# If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
-sudo apt-get -y install postgresql
-
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get -y install postgresql
