@@ -2,6 +2,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y 
 
 sudo apt update && sudo apt upgrade -y	
+sudo apt update && sudo apt dist-upgrade -y	
 sudo apt install postgresql -y
 
 sudo systemctl start postgresql
@@ -34,19 +35,27 @@ su - postgres
 
 psql
 
+Для отображения списка доступных баз данных:
+\l
+
+
 Чтобы создать базу данных с именем «test_db», выполните следующую SQL команду:
 
 CREATE DATABASE test_db;
 
-Теперь создадим базу данных с помощью следующей команды языка SQL:
+Чтобы создать пользователя и предоставить ему права доступа к базе данных, которую мы создали ранее, выполните команды:
 
-create database test2;
+postgres=# 
+CREATE USER testuser WITH ENCRYPTED PASSWORD '1234';
+CREATE ROLE
+postgres=# 
+GRANT ALL PRIVILEGES ON DATABASE test_db to testuser;
+GRANT
 
-Далее подключимся к этой базе данных для осуществления с ней взаимодействия. Для этого применяется команда \c (сокращение от connect), после которой указывается имя базы данных:
+Для подключения к созданной базе данных:
+\c test_db
 
-\c test2
-
-Затем создадим в этой базе данных таблицу с помощью команды:
+Cоздадим в базе данных таблицу с помощью команды:
 
 create table users (Id serial primary key, Name character varying(30), Age integer);
 Данная команда создает таблицу users, в которой будет три столбца - Id, Name и Age.
@@ -57,6 +66,69 @@ insert into users (Name, Age) values ('Tom', 33);
 И в конце получим добавленные данные:
 
 select * from users;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Настройка удаленного доступа к PostgreSQL
+PostgreSQL имеет файл конфигурации, в который можете, при необходимости, вносить изменения . Я покажу вам, как редактировать адреса прослушивания и включать удаленный доступ.
+
+Откройте файл конфигурации:
+
+sudo vim /etc/postgresql/15/main/postgresql.conf
+В разделе Connection and Authentication (Подключение и аутентификация), раскомментируйте строку:
+
+59; #listen_addresses=’localhost’
+и отредактируйте строку, чтобы разрешить прослушивание на любом интерфейсе (To listen on all interfaces) или на определенных интерфейсах (To enable only specified private IP address):
+
+# To listen on all interfaces
+listen_addresses = '*'
+ 
+# To enable only specified private IP address
+listen_addresses = '192.168.50.2'
+Чтобы включить удаленное подключение, отредактируйте файл:
+
+sudo vim /etc/postgresql/15/main/pg_hba.conf
+Внесите следующие изменения:
+
+# To accept connections from anywhere
+host all all 0.0.0.0/0 md5
+ 
+# To accept only from trusted subnet
+host all all 10.10.10.0/24 md5
+После внесения вышеуказанных изменений необходимо перезапустить postgresql:
+
+1
+sudo systemctl restart postgresql
+Чтобы отключить удаленный доступ к базе данных Postgresql, откройте вышеуказанные файлы конфигурации и добавьте « #» в начале строк.
+
+Например, чтобы отключить удаленный доступ из любого места, отредактируйте строку и не забудьте перезапустить postgresql, когда закончите:
+
+1
+#host all all 0.0.0.0/0 md5
+Как видите. Запустить и использовать базу данных Postgresql довольно просто, в любом дистрибутиве Linux, в том числе Kali Linux.
+
+
+
+
+
+
+
+
+
+
 
 
 
