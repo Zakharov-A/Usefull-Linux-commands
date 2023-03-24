@@ -67,6 +67,41 @@ insert into users (Name, Age) values ('Tom', 33);
 
 select * from users;
 
+Размер базы данных
+SELECT pg_database_size(current_database());
+SELECT pg_size_pretty(pg_database_size(current_database()));
+
+Перечень таблиц
+SELECT table_name FROM information_schema.tables
+WHERE table_schema NOT IN ('information_schema','pg_catalog');
+
+Размер таблицы
+SELECT pg_relation_size('users');
+
+Для того, чтобы вывести список таблиц текущей базы данных, отсортированный по размеру таблицы, выполним следующий запрос:
+SELECT relname, relpages FROM pg_class ORDER BY relpages DESC;
+
+Для того, чтобы вывести информацию о самой большой таблице, ограничим запрос с помощью LIMIT:
+SELECT relname, relpages FROM pg_class ORDER BY relpages DESC LIMIT 1;
+
+Перечень подключенных пользователей
+SELECT datname,usename,client_addr,client_port FROM pg_stat_activity;
+
+Просмотр и завершение исполняемых запросов
+Для того, чтобы получить информацию о запросах, выполним следующую команду:
+SELECT pid, age(query_start, clock_timestamp()), usename, query
+FROM pg_stat_activity
+WHERE query != '<IDLE>' AND query NOT ILIKE '%pg_stat_activity%'
+ORDER BY query_start desc;
+
+Применить изменения без перезагрузки сервера:
+SELECT pg_reload_conf();
+
+
+
+
+
+
 
 
 
