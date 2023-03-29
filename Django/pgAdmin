@@ -1,0 +1,171 @@
+
+
+I managed to install pgadmin4 from APT on Ubuntu 22.04, but even after that I was facing some issues while starting pgadmin4.
+
+So I found out that there's a python package for pgadmin4 which exists. It will install the web version of the pgadmin4 and it works without any issue.
+
+Follow the below steps to install or you can check this link.
+
+$ sudo mkdir /var/lib/pgadmin
+$ sudo mkdir /var/log/pgadmin
+$ sudo chown $USER /var/lib/pgadmin
+$ sudo chown $USER /var/log/pgadmin
+
+# Create virtual environment
+$ python3 -m venv pgadmin4
+$ source pgadmin4/bin/activate
+
+# Install pgadmin4
+(pgadmin4) $ pip install pgadmin4
+
+# Start pgadmin4
+(pgadmin4) $ pgadmin4
+For the first time after running pgadmin4, you'll be asked to set the email and password.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$ sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+$ sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main" \
+  > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+$ sudo apt update
+And then, if you want desktop
+
+$ sudo apt install pgadmin4-desktop
+OR the web version:
+
+$ sudo apt install pgadmin4-web 
+$ sudo /usr/pgadmin4/bin/setup-web.sh
+
+Шаг 3. Установка pgAdmin в Debian 11.
+По умолчанию pgAdmin недоступен для установки непосредственно из базового репозитория Debian 11. Теперь мы добавляем в вашу систему официальный репозиторий pgAdmin:
+
+echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main"\
+| sudo tee /etc/apt/sources.list.d/pgadmin4.list
+Затем импортируйте ключ GPG репозитория pgAdmin, используя следующую команду:
+
+curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+После этого установите pgAdmin, используя следующую команду:
+
+sudo apt update
+sudo apt install pgadmin4-web
+Шаг 4. Настройте pgAdmin.
+Теперь мы настраиваем pgAdmin 4 перед тем, как получить к нему доступ:
+
+Шаг 4. Настройте pgAdmin.
+Теперь мы настраиваем pgAdmin 4 перед тем, как получить к нему доступ:
+
+sudo /usr/pgadmin4/bin/setup-web.sh
+Вам будет предложено ввести свой адрес электронной почты и пароль, чтобы завершить настройку, как показано ниже:
+
+Setting up pgAdmin 4 in web mode on a Debian based platform...
+Creating configuration database...
+NOTE: Configuring authentication for SERVER mode.
+
+Enter the email address and password to use for the initial pgAdmin user account:
+
+Email address: admin@infoit.com.ua
+Password: your-strong-passwd
+Retype password: your-strong-passwd
+pgAdmin 4 - Application Initialisation
+======================================
+
+Creating storage and log directories...
+We can now configure the Apache Web server for you. This involves enabling the wsgi module and configuring the pgAdmin 4 application to mount at /pgadmin4. Do you wish to continue (y/n)? y << Type y and press Enter
+The Apache web server is running and must be restarted for the pgAdmin 4 installation to complete. Continue (y/n)? y << Type y and press Enter
+Apache successfully restarted. You can now start using pgAdmin 4 in web mode at http://127.0.0.1/pgadmin
+Шаг 5. Настройте брандмауэр.
+Прежде чем вы сможете получить доступ к веб-интерфейсу pgadmin4, если у вас запущен брандмауэр UFW, вам необходимо открыть порт 80 (HTTP), чтобы разрешить входящий трафик в службе Apache следующим образом:
+
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw status
+Шаг 6. Войдите в веб-интерфейс PgAdmin.
+После успешной установки откройте свой веб-браузер и введите URL-адрес для доступа к веб-интерфейсу pgAdmin4. Вы будете перенаправлены на страницу входа в pgAdmin4:http://your-server-ip/pgadmin4
+
+Поздравляю! Вы успешно установили pgAdmin . Благодарим за использование этого руководства для установки последней версии pgAdmin на Debian 11 Bullseye. Для получения дополнительной помощи или полезной информации мы рекомендуем вам посетить официальный сайт pgAdmin .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main" \
+  > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+sudo apt update
+
+sudo apt install pgadmin4-desktop
+
+sudo apt autoremove pgadmin4
+
+Установите pgAdmin на Debian 11 Bullseye
+Шаг 1. Перед установкой любого программного обеспечения важно убедиться, что ваша система обновлена, выполнив следующие aptкоманды в терминале:
+sudo apt update
+sudo apt upgrade
+sudo apt install wget software-properties-common apt-transport-https gnupg gnupg2
+Шаг 2. Установка PostgreSQL.
+Перед установкой pgAdmin5 на вашем сервере должен быть установлен сервер PostgreSQL. Теперь выполните следующую команду, чтобы установить его:
+
+sudo apt install postgresql
+После установки PostgreSQL запустите службу PostgreSQL и включите ее запуск при перезагрузке системы:
+
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+sudo systemctl status postgresql
+
+
+sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main" \
+  > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+sudo apt update
+
+
+
+
+
+
+
+
+
+
+
+
+# apt-get install curl ca-certificates gnupg
+# curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+#vim /etc/apt/sources.list.d/pgdg.list
+ ####### ADD
+#deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
+
+# apt-get update
+# apt-get install pgadmin4  pgadmin4-apache2

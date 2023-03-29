@@ -1,0 +1,23 @@
+su - postgres
+
+psql
+
+CREATE DATABASE store_db;
+
+CREATE ROLE store_username with password 'store-1234';
+
+ALTER ROLE "store_username" WITH LOGIN;
+
+GRANT ALL PRIVILEGES ON DATABASE "store_db" to store_username;
+
+ALTER USER store_username CREATEDB;
+
+\list
+
+\c store_db
+
+\dt
+
+pip install psycopg2-binary
+
+
