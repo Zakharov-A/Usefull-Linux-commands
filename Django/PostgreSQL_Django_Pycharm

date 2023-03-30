@@ -20,4 +20,18 @@ ALTER USER store_username CREATEDB;
 
 pip install psycopg2-binary
 
+#--migration(s) part 1--
+python3 manage.py makemigrations
+./manage.py makemigrations
+#--migration(s) part 2--
+python3 manage.py migrate
+./manage.py migrate
+
+#-- User creation --
+python3 manage.py createsuperuser
+./manage.py createsuperuser
+
+./manage.py loaddata products/fixtures/categories.json
+
+./manage.py loaddata products/fixtures/goods.json
 
