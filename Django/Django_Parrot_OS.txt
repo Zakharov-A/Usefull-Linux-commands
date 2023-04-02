@@ -70,6 +70,8 @@ python3 manage.py createsuperuser
 python3 manage.py dumpdata products.ProductCategory > categories.json
 ./manage.py dumpdata products.Product > goods.json
 
+./manage.py dumpdata products.Product > categories.json
+
 #--loaddate from fixtures
 python3 manage.py loaddata products/fixtures/categories.json
 ./manage.py loaddata products/fixtures/categories.json
