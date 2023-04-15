@@ -1,3 +1,4 @@
+#-- installation --
 sudo apt-get update 
 sudo apt-get dist-upgrade -y 
 
@@ -45,130 +46,33 @@ CREATE DATABASE test_db;
 
 Чтобы создать пользователя и предоставить ему права доступа к базе данных, которую мы создали ранее, выполните команды:
 
+CREATE DATABASE store_db;
+
+CREATE ROLE store_username with password 'store_password';
+
+ALTER ROLE "store_username" WITH LOGIN;
+
+GRANT ALL PRIVILEGES ON DATABASE store_db to store_username;
+
+ALTER USER "store_username" CREATEDB;
+
+Посмотреть какие есть базы данных:
+\list
+
+Посмотреть есть ли записи в базе данных:
+\dt
+
+pip install psycopg2-binary
+pip install psycopg2-binary
+
+
+
+
 postgres=# 
 CREATE USER testuser WITH ENCRYPTED PASSWORD '1234';
 CREATE ROLE
 postgres=# 
 GRANT ALL PRIVILEGES ON DATABASE test_db to testuser;
 GRANT
-
-Для подключения к созданной базе данных:
-\c test_db
-
-Cоздадим в базе данных таблицу с помощью команды:
-
-create table users (Id serial primary key, Name character varying(30), Age integer);
-Данная команда создает таблицу users, в которой будет три столбца - Id, Name и Age.
-
-После этого мы можем добавлять и получать данные из выше созданной таблицы. Вначале добавим в таблицу одну строку с помощью следующей команды:
-
-insert into users (Name, Age) values ('Tom', 33);
-И в конце получим добавленные данные:
-
-select * from users;
-
-Размер базы данных
-SELECT pg_database_size(current_database());
-SELECT pg_size_pretty(pg_database_size(current_database()));
-
-Перечень таблиц
-SELECT table_name FROM information_schema.tables
-WHERE table_schema NOT IN ('information_schema','pg_catalog');
-
-Размер таблицы
-SELECT pg_relation_size('users');
-
-Для того, чтобы вывести список таблиц текущей базы данных, отсортированный по размеру таблицы, выполним следующий запрос:
-SELECT relname, relpages FROM pg_class ORDER BY relpages DESC;
-
-Для того, чтобы вывести информацию о самой большой таблице, ограничим запрос с помощью LIMIT:
-SELECT relname, relpages FROM pg_class ORDER BY relpages DESC LIMIT 1;
-
-Перечень подключенных пользователей
-SELECT datname,usename,client_addr,client_port FROM pg_stat_activity;
-
-Просмотр и завершение исполняемых запросов
-Для того, чтобы получить информацию о запросах, выполним следующую команду:
-SELECT pid, age(query_start, clock_timestamp()), usename, query
-FROM pg_stat_activity
-WHERE query != '<IDLE>' AND query NOT ILIKE '%pg_stat_activity%'
-ORDER BY query_start desc;
-
-Применить изменения без перезагрузки сервера:
-SELECT pg_reload_conf();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Настройка удаленного доступа к PostgreSQL
-PostgreSQL имеет файл конфигурации, в который можете, при необходимости, вносить изменения . Я покажу вам, как редактировать адреса прослушивания и включать удаленный доступ.
-
-Откройте файл конфигурации:
-
-sudo vim /etc/postgresql/15/main/postgresql.conf
-В разделе Connection and Authentication (Подключение и аутентификация), раскомментируйте строку:
-
-59; #listen_addresses=’localhost’
-и отредактируйте строку, чтобы разрешить прослушивание на любом интерфейсе (To listen on all interfaces) или на определенных интерфейсах (To enable only specified private IP address):
-
-# To listen on all interfaces
-listen_addresses = '*'
- 
-# To enable only specified private IP address
-listen_addresses = '192.168.50.2'
-Чтобы включить удаленное подключение, отредактируйте файл:
-
-sudo vim /etc/postgresql/15/main/pg_hba.conf
-Внесите следующие изменения:
-
-# To accept connections from anywhere
-host all all 0.0.0.0/0 md5
- 
-# To accept only from trusted subnet
-host all all 10.10.10.0/24 md5
-После внесения вышеуказанных изменений необходимо перезапустить postgresql:
-
-1
-sudo systemctl restart postgresql
-Чтобы отключить удаленный доступ к базе данных Postgresql, откройте вышеуказанные файлы конфигурации и добавьте « #» в начале строк.
-
-Например, чтобы отключить удаленный доступ из любого места, отредактируйте строку и не забудьте перезапустить postgresql, когда закончите:
-
-1
-#host all all 0.0.0.0/0 md5
-Как видите. Запустить и использовать базу данных Postgresql довольно просто, в любом дистрибутиве Linux, в том числе Kali Linux.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

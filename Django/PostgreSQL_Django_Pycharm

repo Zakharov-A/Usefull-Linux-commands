@@ -2,6 +2,8 @@ su - postgres
 
 psql
 
+sudo -u postgres psql
+
 CREATE DATABASE store_db;
 
 CREATE ROLE store_username with password 'store-1234';
@@ -12,7 +14,25 @@ GRANT ALL PRIVILEGES ON DATABASE "store_db" to store_username;
 
 ALTER USER store_username CREATEDB;
 
+#-- User creation --
+python3 manage.py createsuperuser
+./manage.py createsuperuser
+
+#--Show list of bases--
 \list
+\l
+
+#--database deletion--
+DROP DATABASE name;
+
+#--Display a list of users--
+\du
+#--delete role in database--
+DROP ROLE store_username;
+
+
+
+
 
 \c store_db
 
@@ -31,7 +51,9 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 ./manage.py createsuperuser
 
+python3 manage.py loaddata products/fixtures/categories.json
 ./manage.py loaddata products/fixtures/categories.json
 
+python3 manage.py loaddata products/fixtures/goods.json
 ./manage.py loaddata products/fixtures/goods.json
 
