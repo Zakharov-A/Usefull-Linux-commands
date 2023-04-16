@@ -1,7 +1,4 @@
 
-#--environment setting--
-sudo install python3-virtualenv
-
 #--creating an environment
 python3 -m venv venv
 
@@ -10,6 +7,9 @@ source venv/bin/activate
 
 #--installation django--
 pip install Django==3.2.16
+
+#--Django installation confirmation--
+django-admin --version
 
 #--upgrade pip--
 python3 -m pip install --upgrade pip
