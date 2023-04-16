@@ -1,0 +1,32 @@
+Установка из файла requirements
+
+sudo apt install python3-virtualenv
+
+
+virtualenv venv -p python3
+source venv/bin/activate 
+pip install -r requirements.txt
+// ----
+
+#-- Saving and loading environment dependencies --
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+#--dumpdata--
+python3 manage.py dumpdata products.ProductCategory > categories.json
+./manage.py dumpdata products.Product > goods.json
+
+./manage.py dumpdata products.Product > categories.json
+
+#--loaddate from fixtures
+python3 manage.py loaddata products/fixtures/categories.json
+./manage.py loaddata products/fixtures/categories.json
+
+python3 manage.py loaddata products/fixtures/goods.json
+./manage.py loaddata products/fixtures/goods.json
+
+#--app users creation--
+python3 manage.py startapp users
+./manage.py startapp users
+
