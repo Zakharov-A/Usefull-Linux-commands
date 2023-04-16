@@ -73,9 +73,9 @@ pip install -r requirements.txt
 
 #--dumpdata--
 python3 manage.py dumpdata products.ProductCategory > categories.json
-./manage.py dumpdata products.Product > goods.json
+./manage.py dumpdata products.ProductCategory > categories.json
 
-./manage.py dumpdata products.Product > categories.json
+./manage.py dumpdata products.Product > goods.json
 
 #--loaddate from fixtures
 python3 manage.py loaddata products/fixtures/categories.json
