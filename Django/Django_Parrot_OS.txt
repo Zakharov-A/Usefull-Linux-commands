@@ -19,6 +19,7 @@ django-admin startproject 'name project'
 
 #--installad packages-- 
 pip freeze
+pip freeze > requirements.txt
 
 #--view commands--
 python3 manage.py --help
@@ -28,6 +29,7 @@ python3 manage.py runserver
 
 #--app creation--
 python3 manage.py startapp 'app name'
+./manage.py startapp 'producrts'
 
 #--install Pillow--
 python3 -m pip install Pillow
@@ -38,6 +40,9 @@ python3 manage.py makemigrations
 #--migration(s) part 2--
 python3 manage.py migrate
 ./manage.py migrate
+
+#--settings.py--
+
 
 #--ipython and shell_plus--
 pip install django-extensions
