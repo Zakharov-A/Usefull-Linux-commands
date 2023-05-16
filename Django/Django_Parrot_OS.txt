@@ -42,6 +42,20 @@ python3 manage.py migrate
 ./manage.py migrate
 
 #--settings.py--
+#--static--
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+#--statics work--
+
+{% load static %}
+
+<link href="{% static 'vendor/img/favicon.png' %}" rel="icon">
+
+
+
 
 
 #--ipython and shell_plus--
