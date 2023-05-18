@@ -55,7 +55,24 @@ STATICFILES_DIRS = [
 <link href="{% static 'vendor/img/favicon.png' %}" rel="icon">
 
 
+#--base.html--
 
+{% load static %}
+
+{% block joke %} {% endblock %}
+
+{% block content %} {% endblock %}
+
+{% block footer %} {% endblock %}
+
+#--idex.html--
+
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% endblock %}
 
 
 #--ipython and shell_plus--
