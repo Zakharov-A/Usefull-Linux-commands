@@ -1,0 +1,20 @@
+
+nano /etc/apt/sources.list
+scat /etc/apt/sources.list
+
+kali-last-snapshot;
+kali-experimental;
+kali-rolling.
+
+
+
+
+sudo apt update
+sudo apt dist-upgrade -y 
+
+cat /etc/os-release
+cat /proc/version
+
+
+
+
