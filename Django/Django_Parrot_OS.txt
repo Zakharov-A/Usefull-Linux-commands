@@ -17,15 +17,15 @@ python3 -m pip install --upgrade pip
 #--project creation--
 django-admin startproject 'name project'
 
-#--installad packages-- 
-pip freeze
-pip freeze > requirements.txt
-
 #--view commands--
 python3 manage.py --help
 
 #-- running the server --
 python3 manage.py runserver
+
+#--installad packages-- 
+pip freeze
+pip freeze > requirements.txt
 
 #--app creation--
 python3 manage.py startapp 'app name'
@@ -33,6 +33,9 @@ python3 manage.py startapp 'app name'
 
 #--install Pillow--
 python3 -m pip install Pillow
+#--django-mptt--
+pip install django-mptt
+
 
 #--migration(s) part 1--
 python3 manage.py makemigrations
