@@ -77,6 +77,8 @@ STATICFILES_DIRS = [
 
 {% endblock %}
 
+{% for post in post_list %}
+ {% endfor %}
 
 #--ipython and shell_plus--
 pip install django-extensions
