@@ -1,0 +1,8 @@
+In your host, run this command:
+
+sudo usermod -a -G vboxusers $USER
+Now perform a logout (always required after add current user to a group).
+
+After login, check that you are in the vboxusers group with this command, make sure that vboxusers is in the shown list:
+
+groups $USER
