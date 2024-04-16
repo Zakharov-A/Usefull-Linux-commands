@@ -1,0 +1,41 @@
+install package
+dpkg -i name
+
+delete package
+dpkg -r name
+
+info list
+dpkg -l name
+
+status
+dpkg -l name
+
+verify
+dpkg -V name
+
+apt & apt-get
+
+/etc/apt/sources.list
+
+apt update
+
+apt upgrade
+
+apt edit-sources
+apt update
+apt install
+
+apt remove
+
+apt search
+
+apt list
+
+apt list | grep name
+
+apt search
+apt-cache search name
+
+
+
+

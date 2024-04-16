@@ -1,0 +1,28 @@
+install package
+rpm -ivh <package name>p
+
+delete package
+rpm -e <name>
+
+program update
+rpm -Uvh <name>
+
+query about the program
+rpm -q <name>
+
+verify
+rpm -V <name>
+
+yum install <httpd>
+
+yum repolist
+
+yun provides <scp>
+
+yum remove <name>
+
+yum update name
+
+yum update
+
+
