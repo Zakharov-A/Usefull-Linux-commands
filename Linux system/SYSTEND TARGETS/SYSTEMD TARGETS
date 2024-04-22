@@ -1,0 +1,14 @@
+SYSTEMD TARGETS
+
+runlevel
+N 5 or N 3
+
+VIEW SYSTEMD TARGETS
+
+systemctl get-default
+
+ls -ltr /etc/systemd/system/default.target
+
+systemctl set-default multi-user.target --- N 3
+systemctl set-default graphical.target --- N 5
+

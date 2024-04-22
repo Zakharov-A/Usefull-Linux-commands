@@ -1,0 +1,15 @@
+file /home/jimmy
+
+file /usr/sbin/service
+
+file /run/rpcbing.sock
+
+file /var/run
+
+ls -ld /home/jimmy
+
+LINKS
+
+ls -li
+
+ln --- Создание жесткой ссылки (hard link)

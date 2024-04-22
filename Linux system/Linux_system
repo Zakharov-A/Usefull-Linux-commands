@@ -1,15 +1,6 @@
-udevadm info -n (device name) - 
-udevadm monitor
-uname -r - точная версия системы
-lspci
-lsblk
-lscpu - Архитектура центрального процессора
-lsmem - Вывод доступной памяти
-free - (-m, -g) общий объем памяти по сравнению с используемым
-lshw - Апаратная конфигурация
-ls -l /sbin/init - просмотр системы инициализации
-runlevel - Просмотр режима работы OS (N 5 - Графический  режим, N 3 - Консольный)
-systemctl get-default
 
-ls -ltr /ets/systemd/system/default.target
+
+
+
+
 
