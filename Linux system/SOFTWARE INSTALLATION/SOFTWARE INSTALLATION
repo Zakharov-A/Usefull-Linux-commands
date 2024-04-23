@@ -1,0 +1,94 @@
+SOFTWARE INSTALLATION
+
+Actions with RPM
+
+rpm -ivh name.rpm --- Install
+
+rpm -e name --- Erase
+
+rpm -Uvh name --- Upgrade
+
+rpm -q name --- Query
+
+rpm -V name --- Verify
+
+Actions with YUM
+
+ /etc/yum.repos.d
+ 
+ /etc/yum.repos.d/redhat.repo
+ 
+ /etc/yum.repos.d/nginx.pepo
+ 
+ yum install httpd
+ 
+ yum repolist
+ 
+ yum provides name
+ 
+ yum remove name
+ 
+ yum update name
+ 
+ yum update
+ 
+ Actions with DPKG
+ 
+ dpkg -i name --- Install
+ 
+gpkg -r --- Remove
+
+dpkg -l name --- List
+
+dpkg -s --- Status
+
+dpkg -V --- Verify 
+ 
+ Actions with APT & APT-GET
+
+/etc/zpt/sources.list
+
+apt update --- Обновить список пакетов
+
+apt upgrade --- Обновить установленные пакеты
+
+apt edit-sources --- Изменить файл репозиториев
+
+apt install --- Установить/Обновит пакет
+
+apt remove --- Удалить пакет
+
+apt search --- Искать пакет
+
+apt list --- Список пакетов
+
+apt list | grep name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
