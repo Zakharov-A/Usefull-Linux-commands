@@ -1,0 +1,29 @@
+COMPRESSING_DECOMPRESSING
+
+Compressing
+
+bzip2 name --- bzip
+
+du -sh name
+
+gzip name --- gzip
+
+xz name --- xz
+
+Decompressing
+
+bunzip2 name --- bunzip2
+
+gunzip name --- gunzip
+
+unxz name --- unxz
+
+VIEW COMPRESSED
+
+zcat name
+
+bzcat name
+
+xzcat name
+
+

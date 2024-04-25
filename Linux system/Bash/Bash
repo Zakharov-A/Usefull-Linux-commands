@@ -1,0 +1,11 @@
+du -sk name
+
+du -sh name
+
+ls -lh
+
+tar -cf 
+
+Compressing/decompressing
+
+
