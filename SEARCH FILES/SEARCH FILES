@@ -1,0 +1,117 @@
+SEARCH FILES
+
+locate name --- Найти файл
+
+update --- обновить базу locate
+
+find name dir name file --- Поиск файла
+
+GREP
+
+grep <word> name_file --- Найти строку
+
+grep -i --- Найти строку без учета регистра
+
+grep -r " строка в директории "--- Найти строку рекурсивно 
+
+grep -v "string" --- Найти все строки которые не содержат указанное
+
+grep -w word --- Найти строку, как слово, окруженное пробелами
+
+grep -vw word --- Как слово, окруженное пробелами и инвертировать
+
+grep -A1 Str --- Найти строку и строки после нее
+
+grep -B1 Num_str --- Найти строку и строки до нее
+
+awk '{awk-command}'
+
+awk '{print $1}' name_file
+
+IO REDIRECTION
+
+echo $SHELL 1> shell.txt
+
+cat nofile 2> errors.txt
+
+ cat nofile 2>> errors.txt
+
+ls shell.txt nofile 2>> errors.txt 1>> shell.txt
+
+cat nofile 2> /dev/null
+
+> FEATURES
+
+ls -l name.txt > name.txt
+ls -lh name txt
+
+COMMAND LINE PIPES
+
+command1 | command2 --- Создание конвеера между командами
+grep Nice greetings.txt | less
+
+echo "My shell is Bash" | tee -a shell.txt
+
+>& FEATURES
+
+ls -l notOk name.txt 1> name.txt 2>$1
+
+EXIT CODE
+
+echo $? --- 0 normal 1 error
+
+`AND` & `OR`
+
+ls shell.txt && echo"ok"
+shell.txt
+ok
+
+ls shell.txt || echo "something bad"
+shell.txt
+
+ls nofile ; echo "ok"
+ls: cannot acces 'nofile': No such file or directory
+ok
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
