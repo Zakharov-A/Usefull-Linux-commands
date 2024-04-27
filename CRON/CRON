@@ -1,0 +1,11 @@
+CRON
+
+cron --- Служба для запуска по расписанию
+
+crontab -e
+
+crontab -l
+
+tail -n -1 /var/log/syslog
+
+
