@@ -1,0 +1,11 @@
+File_Permissions
+
+chmod <permissions> file --- изменение прав доступа к файлам и каталогам
+
+chmod 777 my-file --- полный доступ для owner, group и other
+
+chown <owner>:<group> file --- изменение владельца и группы для файлов
+
+
+
+
