@@ -17,8 +17,7 @@ less name_file --- viewing a file with the ability to flip through
 q --- exit
 /what_find --- find what you need
 
-help command --- what the entered command does
-
+command --help --- what the entered command does
 
 sudo apt-get update 
 sudo apt-get dist-upgrade -y 
