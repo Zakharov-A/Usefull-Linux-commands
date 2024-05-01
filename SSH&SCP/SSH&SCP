@@ -1,0 +1,15 @@
+SSH&SCP
+
+ssh <hostname or IP-address>
+
+ssh <user>@hostname or IP-address>
+
+ssh -l <user>@hostname or IP-address>
+
+ssh-keygen -t rsa
+
+ssh-copy-id name@dev-str01
+
+scp <storage address client> <storage address server>
+
+scp -pr <storage address client> <storage address server>
