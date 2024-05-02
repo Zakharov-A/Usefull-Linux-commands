@@ -1,0 +1,26 @@
+whoami
+
+pwd
+
+ls
+
+cat
+
+cd ..
+
+head -n --- cat name_file|head -number_of_lines_from_beginnig>
+
+tail -n --- cat name_file| -number_of_lines_from_end
+
+less name_file --- viewing a file with the ability to flip through
+command|less
+q --- exit
+/what_find --- find what you need
+
+more
+
+man is
+
+command --help --- what the entered command does
+
+
