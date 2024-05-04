@@ -1,0 +1,22 @@
+
+cat > or >> name.txt --- adding data to a file (save and exit D+ctr)
+
+cat 1.txt>2.txt --- Data forwarding with file overwrite
+
+cat 1.txt>>2.txt --- Data direction appended to end of file
+
+ls --help>helpfile
+
+grep --- search by value (grep H<1.txt)
+
+comand && comand --- if
+
+comand || command --- or
+
+history --- Output of all commands you entered
+history 20 --- Displays the last 20 commands entered 
+
+
+
+
+

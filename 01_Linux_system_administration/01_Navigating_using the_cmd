@@ -5,8 +5,12 @@ pwd
 ls
 
 cat
+cat name.format>name.format
 
-cd ..
+
+cd .. ---
+
+cd / ---
 
 head -n --- cat name_file|head -number_of_lines_from_beginnig>
 
@@ -17,7 +21,7 @@ command|less
 q --- exit
 /what_find --- find what you need
 
-more
+command|more
 
 man is
 
