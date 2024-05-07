@@ -1,0 +1,28 @@
+
+touch name_file --- Create file
+touch -t data(202022111215) --- Changing the file creation date
+touch -r name_file_1 name_file_2 --- Changing the creation date of one file to the data of another
+
+apt install file --- Install package file
+
+apt install man --- Install man package
+
+cd / --- Go to root section
+
+file name_file --- View file type
+
+ls sd* --- View all storage devices
+
+ls sd[abcdef...] --- Show all physical devices or files
+
+mkdir directory_name --- Create direktory
+mkdir -p dir_name_1/dir_name2/dir_name3 --- Сreate a directory chain
+rmdir dir_name --- Deleting an empty directory
+rmdir -p dir_name_1/dir_name2/dir_name3 --- Deleting a directory chain
+
+rm -r dir_name --- Deleting a directory with all its contents
+
+
+
+
+
