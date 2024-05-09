@@ -21,6 +21,18 @@ rmdir dir_name --- Deleting an empty directory
 rmdir -p dir_name_1/dir_name2/dir_name3 --- Deleting a directory chain
 
 rm -r dir_name --- Deleting a directory with all its contents
+rm -rf dir_name --- Deleting a directory with all its contents
+
+cp file_name new_file_name --- Copies the file
+cp -p file_name new_file_name --- Copies the file recursively
+cp -u file_name new_file_name --- copying and preserving newer versions
+cp directory_name destination_directory --- copying directory inside
+cp -r directory_name/* destination_directory --- copy directory contents
+
+mv file_name new_file_name --- rename file, move file
+
+
+
 
 
 
