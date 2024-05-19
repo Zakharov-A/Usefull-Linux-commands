@@ -1,0 +1,9 @@
+Symbolic link
+
+ln -s file_name link_name --- link creation
+
+Hard link
+
+ln опции целевой_файл имя_ссылки
+
+

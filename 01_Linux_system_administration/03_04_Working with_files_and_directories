@@ -29,7 +29,37 @@ cp -u file_name new_file_name --- copying and preserving newer versions
 cp directory_name destination_directory --- copying directory inside
 cp -r directory_name/* destination_directory --- copy directory contents
 
-mv file_name new_file_name --- rename file, move file
+mv [options] file_name new_file_name --- rename file, move file
+
+mv archivo.1 archivo.2 archivo.3 /ruta/de/destino
+mv AMD* /ruta/de/destino
+mv *.deb /ruta/de/destino
+
+mv [options] source target --- rename directory, move directory
+mv options /home/user/name_dir /home/user/name_dir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
