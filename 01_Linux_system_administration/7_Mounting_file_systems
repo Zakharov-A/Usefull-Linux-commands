@@ -1,0 +1,17 @@
+cd /etc
+
+file fstab
+
+mount -t file_system_type - option_keys - device_directly - Where (that is, the mount point)
+
+mount /dev/sda1 /home/nix/ ---
+
+umount /home/nix --- 
+
+extFat ---
+
+mount -r /dev/sda1 /home/nix/usb_disk/ ---
+
+
+
+
