@@ -1,0 +1,42 @@
+dpkg --list apt
+
+dpkg --status apt
+
+dpkg --listfiles apt --- 
+
+dpkg --search python*
+
+dpkg --search README.Debian
+
+dpkg -install name --- package installation
+
+dpkg -i name --- package installation
+
+apt download sudo --- tighten the package sudo
+
+ls *.deb
+
+dpkg --remove package_name --- removes the package
+
+dpkg --purge package_name --- removes the package and files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

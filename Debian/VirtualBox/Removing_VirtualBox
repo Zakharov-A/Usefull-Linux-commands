@@ -9,6 +9,10 @@ dpkg -S fullpath где fullpath полный путь к исполняемом
 
 Удаляем используя имя пакета
 
+sudo apt purge --autoremove virtualbox-6.1 -y
+
+
+
 dpkg --remove packagename где packagename имя пакета (взять из результата предыдущей команды)
 
 
