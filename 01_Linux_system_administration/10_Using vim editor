@@ -1,0 +1,61 @@
+Shift+a --- text editing mode
+Shift+: ---
+w --- save
+q --- exit
+q! --- exit without saving
+
+H, L, J, K --- moving
+
+Shift+g --- moving to the last string
+
+
+in command 
+
+u --- cancel changes
+r --- replace character
+Shift+r --- replace string
+x --- delete character
+dw --- delete word
+dd --- delete string
+v --- visual mode, x --- cut, y --- copy,
+shift v --- select the entire line, p --- insert,
+shift "a-z --- 
+Shift+: --- 
+:set number --- 
+:vsplit ---
+:split ---
+ctr ww ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
