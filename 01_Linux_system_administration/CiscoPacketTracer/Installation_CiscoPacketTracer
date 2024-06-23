@@ -1,0 +1,7 @@
+sudo dpkg -i CiscoPacketTracer_811_Ubuntu_64bit.deb
+
+sudo apt install -f
+
+packettracer
+
+
