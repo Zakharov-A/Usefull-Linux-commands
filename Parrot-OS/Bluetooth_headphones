@@ -1,0 +1,14 @@
+After I long search (google) I found the solution:
+- install libspa-0.2-bluetooth
+- reboot
+And then bluetooth worked.
+
+apt search libspa-0.2-bluetooth
+
+sudo apt install libspa-0.2-bluetooth
+
+reboot
+
+
+
+

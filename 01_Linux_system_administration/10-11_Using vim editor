@@ -25,6 +25,13 @@ Shift+: ---
 :vsplit ---
 :split ---
 ctr ww ---
+/ search_value --- finds the first specified value (n - next, N - previous)
+
+ls -a --- show hidden files
+
+touch vimrc --- create vim configuration file
+
+ls -al ---
 
 
 
@@ -36,8 +43,6 @@ ctr ww ---
 
 
 
-
-h
 
 
 
