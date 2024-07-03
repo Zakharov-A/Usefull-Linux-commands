@@ -31,7 +31,11 @@ ls -a --- show hidden files
 
 touch vimrc --- create vim configuration file
 
-ls -al ---
+ls -al --- Show all files including hidden ones
+
+blkid address_and_name_device ---
+
+
 
 
 
