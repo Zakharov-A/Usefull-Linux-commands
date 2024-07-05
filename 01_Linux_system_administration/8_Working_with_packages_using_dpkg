@@ -1,12 +1,12 @@
-dpkg --list apt
+dpkg --list apt --- shows whether the program is installed
 
-dpkg --status apt
+dpkg --status apt --- package and dependency information
 
-dpkg --listfiles apt --- 
+dpkg --listfiles apt --- list of files installed by the program
 
-dpkg --search python*
+dpkg --search python* --- shows who installed the file on the system
 
-dpkg --search README.Debian
+dpkg --search README.Debian --- shows who installed the file on the system
 
 dpkg -install name --- package installation
 
