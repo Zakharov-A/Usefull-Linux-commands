@@ -35,6 +35,8 @@ ls -al --- Show all files including hidden ones
 
 blkid address_and_name_device ---
 
+/etc/fstab
+
 
 
 

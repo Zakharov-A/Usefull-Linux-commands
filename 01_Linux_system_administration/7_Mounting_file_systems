@@ -10,7 +10,7 @@ umount /home/nix ---
 
 extFat ---
 
-mount -r /dev/sda1 /home/nix/usb_disk/ --- mount with read-only permission
+mount -r /dev/sdb1 /home/nix/usb_disk/ --- mount with read-only permission
 
 
 
