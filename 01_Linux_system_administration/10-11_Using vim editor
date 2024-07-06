@@ -35,9 +35,11 @@ ls -al --- Show all files including hidden ones
 
 blkid address_and_name_device ---
 
-/etc/fstab
+blkid /dev/sdb1>/home/nix/aboutflash
 
+cd /etc/fstab
 
+vim fstab
 
 
 
