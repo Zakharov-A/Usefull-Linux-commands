@@ -41,6 +41,14 @@ cd /etc/fstab
 
 vim fstab
 
+split /home/nix/aboutflash
+
+UUID="indicate current" address_where_we_mount exfat defaults 0 2
+
+
+
+
+
 
 
 
