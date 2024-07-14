@@ -1,0 +1,93 @@
+file /etc/passwd --- file with information about all users and groups
+
+file /etc/shadow --- password file
+
+getent passwd user_name --- display user information
+
+file /etc/nsswitch.conf --- list of information sources by user or group
+
+useradd igor --- creating a user
+
+passwd user_name --- creating a password for the user
+
+cd /home/
+
+mkdir /home/user_name --- creating a directory for the user
+
+variant 2
+
+adduser user_name --- automated user creation with group, home directory and additional information
+
+useradd kliff -m -d /home/kliff -k /home/nix -s /bin/bash --- user creation with group, home directory and additional information without password
+
+User modification
+
+usermod -d (changes home directory) \ -m -d(will move the home directory along with the contents) \ -l(change username) \ 
+
+usermod old_user_name -l new_user_name --- change username
+
+usermod user_name -s /bin/bash --- shell change 
+
+userdel user_name --- deleting a user without deleting the user's files
+
+userdel -r user_name --- user deletion with deletion of user files
+
+Groups
+
+/etc/group
+
+groups user_name --- view group information for a user
+
+addgroup group_name --- creating a group
+
+usermod user_name -g group_name --- change main group
+
+usermod user_name -G name_group_1,name_group_2 --- replace groups to the user
+
+usermod user_name -a -G name_group_1,name_group_2 --- add additional groups to the user
+
+groupdel name_group --- delete group
+
+User Configuration
+
+/bin/false
+
+usermod user_name -s /bin/false --- not do it
+usermod user_name -s /bin/false --- not do it
+usermod user_name -s /bin/bash --- correctly
+
+cat etc/motd
+
+touch .hushlogin --- ignore message from file motd when logging in
+
+usermod -L user_name --- block user
+
+usermod -U user_name --- unblock user
+
+usermod user_name -e 2024-07-15  --- block a user on a specified date
+
+chage -l user_name --- displaying password and user access information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
