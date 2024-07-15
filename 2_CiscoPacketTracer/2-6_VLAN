@@ -43,6 +43,14 @@ switchport access vlan 2 --- assignment to vlan port
 
 exit
 
+int gig 0/1
+
+switchport mode trunk
+
+switchport trunk allowed vlan 2,3
+
+(in Switch#)
+wr memory
 
 
 
