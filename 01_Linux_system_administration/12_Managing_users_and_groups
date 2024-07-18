@@ -35,6 +35,7 @@ userdel -r user_name --- user deletion with deletion of user files
 Groups
 
 /etc/group
+cat /etc/group
 
 groups user_name --- view group information for a user
 
@@ -42,11 +43,15 @@ addgroup group_name --- creating a group
 
 usermod user_name -g group_name --- change main group
 
-usermod user_name -G name_group_1,name_group_2 --- replace groups to the user
+usermod user_name -G name_group_1,name_group_2 --- Adds additional groups to the user, erasing old values
+
+usermod user_name -g name_main_group -G name_group_1,name_group_2 --- change main group and adds additional groups to the user
 
 usermod user_name -a -G name_group_1,name_group_2 --- add additional groups to the user
 
 groupdel name_group --- delete group
+
+id usr_name --- complete information on user groups
 
 User Configuration
 
@@ -66,8 +71,7 @@ usermod -U user_name --- unblock user
 
 usermod user_name -e 2024-07-15  --- block a user on a specified date
 
-chage -l user_name --- displaying password and user access information
-
+chage -l user_name --- display information about the validity period of a user account
 
 
 
