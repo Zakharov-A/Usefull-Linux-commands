@@ -1,0 +1,25 @@
+
+chmod 
+0 - file
+r - 4, w - 2, x - 1
+
+chmod 0761 file_name --- changes access rights to the file, for the owner all rights, for the group read and write, for everyone else only execute.
+
+chmod -R 777 name_dir --- gives read, write and execute rights to the entire directory and all files.
+
+chmod -c file_name --- the -c key shows which rights have changed to which
+
+chmod u=w,g=w,o=w file_name --- symbolic change of access rights
+
+chmod a=w file_name --- symbolic change of access rights
+
+chmod u-w,o+x filename
+
+su --- switch to superuser without leaving your account and current directory
+exit --- will return to the current user
+whoami --- shows which user account you are in
+
+
+
+
+
