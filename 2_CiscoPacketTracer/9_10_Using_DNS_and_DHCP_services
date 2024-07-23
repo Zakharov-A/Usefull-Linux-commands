@@ -39,7 +39,7 @@ Router(dhcp-config)#dns-server 7.7.7.7
 
 Router(dhcp-config)#exit
 
-Router(config)#ip excluded-address 192.168.0.1
+Router(config)#ip dhcp excluded-address 192.168.0.1
 
 Router(config)#exit
 

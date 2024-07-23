@@ -1,0 +1,32 @@
+Router>en
+Router#conf t
+Router(config)#interface fa0/0
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#exit
+
+Router(config)#ip dhcp excluded-address 192.168.0.1 192.168.0.6
+
+Router(config)#ip dhcp pool companyname
+
+Router(dhcp-config)#network 192.168.0.0 255.255.255.0
+
+Router(dhcp-config)# default-router 192.168.0.1
+
+Router(dhcp-config)#domain-name companyname
+
+Router(dhcp-config)#dns-server 192.168.0.2
+
+Router(dhcp-config)#exit
+
+
+
+
+
+
+
