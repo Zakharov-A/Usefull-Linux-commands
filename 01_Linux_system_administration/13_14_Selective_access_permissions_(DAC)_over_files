@@ -19,6 +19,36 @@ su --- switch to superuser without leaving your account and current directory
 exit --- will return to the current user
 whoami --- shows which user account you are in
 
+directory 
+
+cp -R dir_name dir_name --- copies one directory to another
+
+chmod 444 dir_name --- set read only permissions
+
+chown -v new_owner file_name --- change owner, works only under root
+
+chown -v nix:Sam file_name --- change file user group
+
+chown -v new_user: file_name --- change file owner
+
+chown :new_user file_name --- change file owner group
+
+SUID Set User ID 
+SGID
+Sticky bit
+
+chmod 2666 dir_name --- SGID
+
+chmod 4666 file_name --- 
+
+bash file_name --- Execute file
+
+chmod 1777 dir_name --- Install on directory sticky bit
+
+--- copies all files from one directory to another
+
+
+
 
 
 

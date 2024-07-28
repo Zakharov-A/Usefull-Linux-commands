@@ -20,6 +20,12 @@ adduser user_name --- automated user creation with group, home directory and add
 
 useradd kliff -m -d /home/kliff -k /home/nix -s /bin/bash --- user creation with group, home directory and additional information without password
 
+cat /etc/shadow
+
+openssl passwd -1 password_new --- Create an encrypted password
+
+useradd user_name -m -p $(openssl passwd -1 user_password)
+
 User modification
 
 usermod -d (changes home directory) \ -m -d(will move the home directory along with the contents) \ -l(change username) \ 
