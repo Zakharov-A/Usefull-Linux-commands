@@ -37,9 +37,9 @@ SUID Set User ID
 SGID
 Sticky bit
 
-chmod 2666 dir_name --- SGID
+chmod 2666 dir_name --- Install on directory SGID
 
-chmod 4666 file_name --- 
+chmod 4666 file_name --- Install on directory SUID
 
 bash file_name --- Execute file
 
