@@ -1,0 +1,62 @@
+ps --- shows what is running from the current user
+
+ps -a ---
+
+ps -u user_name ---
+
+ps -A|less --- shows all processes
+
+ps -x ---
+
+ps aux --- 
+
+top ---
+
+top -u user_name --- 
+
+nice -n 11 comand file --- run at a certain priority
+
+renice -n 3 -p PID --- change process priority
+
+kill PID_process --- stop process
+
+apt install psmisc
+
+killall name_processes --- Terminates all identical processes by process name for all users
+
+sleep time_in_seconds --- makes the program not respond
+
+sleep time_in_second $ --- in the background makes the program not respond
+
+jobs --- show programs in background
+
+fq %process_number --- Bring the processor from the background to the foreground
+
+ps j --- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
