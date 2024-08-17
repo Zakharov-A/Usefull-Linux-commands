@@ -1,0 +1,107 @@
+****17_Configuring EIGRP****
+****Router0****
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int fa0/0
+Router(config-if)#ip addr 192.168.100.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#int fa0/1
+Router(config-if)#ip addr 192.168.0.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+Router(config-if)#exit
+Router(config)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Router>
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int fa0/1
+Router(config-if)#router eigrp 10
+Router(config-router)#
+Router(config-router)#network 192.168.100.1
+Router(config-router)#network 192.168.0.1
+Router(config-router)#exit
+Router(config)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 10: Neighbor 192.168.0.2 (FastEthernet0/1) is up: new adjacency
+
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip eigrp neigbors 
+                         ^
+% Invalid input detected at '^' marker.
+	
+Router#show ip eigrp neighbors 
+IP-EIGRP neighbors for process 10
+H   Address         Interface      Hold Uptime    SRTT   RTO   Q   Seq
+                                   (sec)          (ms)        Cnt  Num
+0   192.168.0.2     Fa0/1          12   00:06:56  40     1000  0   3
+
+Router#
+
+****Router1****
+
+Router>
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/1
+Router(config-if)#ip address 192.168.101.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#int fa0/0
+Router(config-if)#ip addr 192.168.0.2 255.255.255.0
+Router(config-if)#exit
+Router(config)#int fa0/1
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Router(config-if)#exit
+Router(config)#int fa0/0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#int fa0/0
+Router(config-if)#router eigrp 10
+Router(config-router)#network 192.168.101.1
+Router(config-router)#network 192.168.0.2
+Router(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 10: Neighbor 192.168.0.1 (FastEthernet0/0) is up: new adjacency
+
+Router(config-router)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip eigrp neighbors
+IP-EIGRP neighbors for process 10
+H   Address         Interface      Hold Uptime    SRTT   RTO   Q   Seq
+                                   (sec)          (ms)        Cnt  Num
+0   192.168.0.1     Fa0/0          10   00:09:07  40     1000  0   3
+
+Router#
+
+Router#
