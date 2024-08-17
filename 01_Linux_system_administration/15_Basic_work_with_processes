@@ -1,18 +1,20 @@
 ps --- shows what is running from the current user
 
-ps -a ---
+ps -a --- shows what is running for each user
 
-ps -u user_name ---
+ps -u user_name ---shows all processes for a specific user
 
 ps -A|less --- shows all processes
 
-ps -x ---
+ps -x --- shows processes on different terminals with process status
 
-ps aux --- 
+man ps --- shows a detailed description of the ps command
 
-top ---
+ps aux ---  display all processes with all information
 
-top -u user_name --- 
+top --- task manager for linux
+
+top -u user_name --- task manager for a specific user
 
 nice -n 11 comand file --- run at a certain priority
 
