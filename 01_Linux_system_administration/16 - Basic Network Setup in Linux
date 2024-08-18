@@ -1,0 +1,15 @@
+****16 - Basic Network Setup in Linux****
+
+ip a --- view IP
+
+ip addr add 192.168.0.1/24 dev device_name--- assign IP
+
+vim /etc/network/interfaces
+
+hostname --- view host name
+
+hostname new_name --- change hostname
+
+vim /etc/hosts
+
+
