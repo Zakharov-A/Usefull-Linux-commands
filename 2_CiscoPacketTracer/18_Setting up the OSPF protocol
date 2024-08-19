@@ -1,0 +1,77 @@
+****18_Setting up the OSPF protocol****
+****Router1****
+
+Router>en
+Router#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int fa0/0
+Router(config-if)#ip addr 192.168.101.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#int fa0/1
+Router(config-if)#ip addr 192.168.1.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+Router(config-if)#exit
+Router(config)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.101.0 0.0.0.255 area 0
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 0
+Router(config-router)#exit
+Router(config)#
+Router(config)#
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+****Router2****
+
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/1
+Router(config-if)#int fa0/1
+Router(config-if)#ip addr 192.168.100.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Router(config-if)#exit
+Router(config)#int fa0/1
+Router(config-if)#exit
+Router(config)#int fa0/0
+Router(config-if)#ip addr 192.168.1.2 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.100.0 0.0.0.255
+% Incomplete command.
+Router(config-router)#network 192.168.100.0 0.0.0.255 area 0
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 0
+Router(config-router)#exit
+Router(config)#
+00:29:48: %OSPF-5-ADJCHG: Process 1, Nbr 192.168.101.1 on FastEthernet0/0 from LOADING to FULL, Loading Done
+
+
