@@ -6,10 +6,20 @@ ip addr add 192.168.0.1/24 dev device_name--- assign IP
 
 vim /etc/network/interfaces
 
+iface device_name inet static
+address 192.168.0.1
+netmask 255.255.255.0
+
 hostname --- view host name
 
 hostname new_name --- change hostname
 
-vim /etc/hosts
+
+
+
+
+
+
+
 
 

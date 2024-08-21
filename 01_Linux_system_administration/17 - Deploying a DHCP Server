@@ -1,0 +1,19 @@
+****17 - Deploying a DHCP Server****
+
+apt install isc-dhcp-server
+
+cd /run
+
+vim /etc/default/isc-dhcp-server
+
+vim /etc/hosts
+
+enp0s3
+
+vim /etc/dhcp/dhcpd.conf
+
+vim /etc/network/interfaces
+
+systemctl status isc-dhcp-server
+
+cd /var/lib/dhcp
