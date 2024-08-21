@@ -1,0 +1,369 @@
+****19_OSPF Behavior During Network Failures****
+
+****Router1****
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#int ga0/2
+                    ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#int GigabitEthernet0/2
+Router(config-if)#ip addr 192.168.1.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+Router(config-if)#
+Router(config-if)#txit
+                    ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#exit
+Router(config)#
+Router>
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int GigabitEthernet0/0
+Router(config-if)#ip addr 10.10.10.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#int GigabitEthernet0/1
+Router(config-if)#ip addr 10.10.11.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int loopback 0
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface Loopback0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+
+Router(config-if)#ip addr 192.168.100.1 255.255.255.255
+Router(config-if)#no sh
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.1.0 0.0.0.3 area 0
+Router(config-router)#network 10.10.10.0 0.0.0.3 area 0
+Router(config-router)#network 10.10.11.0 0.0.0.3 area 0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+
+****router0****
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int GigabitEthernet0/2
+Router(config-if)#ip addr 192.168.2.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+Router(config-if)#exit
+Router(config)#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#int GigabitEthernet0/0
+Router(config-if)#ip addr 10.10.10.2 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int GigabitEthernet0/1
+Router(config-if)#ip addr 10.10.12.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int loopback 0
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface Loopback0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+
+Router(config-if)#ip addr 192.168.100.2 255.255.255.255
+Router(config-if)#no sh
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.2.0 0.0.0.3 area 0
+Router(config-router)#network 10.10.10.0 0.0.0.3 area 0
+Router(config-router)#
+01:30:13: %OSPF-5-ADJCHG: Process 1, Nbr 192.168.100.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+Router(config-router)#network 10.10.12.0 0.0.0.3 area 0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+****Router2****
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int GigabitEthernet0/2
+Router(config-if)#ip addr 192.168.3.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int GigabitEthernet0/1
+Router(config-if)#ip addr 10.10.11.2 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#int GigabitEthernet0/0
+Router(config-if)#ip addr 10.10.12.2 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int loopback 0
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface Loopback0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+
+Router(config-if)#ip addr 192.168.100.3 255.255.255.0
+Router(config-if)#no sh
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.3.0 0.0.0.3 area 0
+Router(config-router)#network 10.10.11.0 0.0.0.3 area 0
+Router(config-router)#
+01:42:04: %OSPF-5-ADJCHG: Process 1, Nbr 192.168.100.1 on GigabitEthernet0/1 from LOADING to FULL, Loading Done
+
+Router(config-router)#network 10.10.12.0 0.0.0.3 area 0
+Router(config-router)#
+01:43:28: %OSPF-5-ADJCHG: Process 1, Nbr 192.168.100.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#sh ip ospf neighbor
+Router#sh ip route
+
+
+
+
+
+
+
+
