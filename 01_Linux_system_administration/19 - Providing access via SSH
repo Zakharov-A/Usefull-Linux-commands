@@ -1,0 +1,23 @@
+19 - Providing access via SSH
+
+apt install openssh-server
+
+systemctl status ssh
+
+apt install openssh-client
+
+ip a
+
+ssh user_name@ip_address
+ssh -p port_number user_name@ip_address
+
+vim /etc/ssh/sshd_config
+
+systemctl restart ssh
+
+scp -P 2239 /root/newfile.txt root@169.254.11.106:/root
+
+scp -P 2239 root@169.254.11.106:/root/take_me.txt /root/
+
+
+
