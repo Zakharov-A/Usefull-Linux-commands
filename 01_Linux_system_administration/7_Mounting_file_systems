@@ -1,6 +1,10 @@
 cd /etc
 
-file fstab
+cat fstab
+
+cd /dev
+
+ls
 
 mount -t file_system_type - option_keys - device_directly - Where (that is, the mount point)
 

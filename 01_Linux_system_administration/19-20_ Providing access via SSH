@@ -1,0 +1,73 @@
+19 - Providing access via SSH
+
+apt install openssh-server
+
+systemctl status ssh
+
+apt install openssh-client
+
+ip a
+
+ssh user_name@ip_address
+ssh -p port_number user_name@ip_address
+
+vim /etc/ssh/sshd_config
+
+
+
+systemctl restart ssh
+
+scp -P 2239 /root/newfile.txt root@169.254.11.106:/root
+
+scp -P 2239 root@169.254.11.106:/root/take_me.txt /root/
+
+****Lesson 20 - SSH Security (IP Restriction and Key Access)****
+
+vim /etc/hosts.allow
+
+sshd: ip_address --- Allow ssh access to the specified address
+
+vim /etc/hosts.deny
+
+sshd: All
+
+****generation of encryption keys****
+
+--- generation of encryption keys
+
+ssh-keygen --- generation of encryption keys
+
+/root/.ssh/id_rsa
+
+cd .ssh
+
+ssh-copy-id user_name@ip_address
+
+ssh-copy-id -p 3838 nix@169.254.10.221
+ssh-copy-id ‘-p *port* username@remote_host’
+
+sudo service ssh restart (для Ubuntu / Debian / Mint Linux)
+sudo service sshd restart (для CentOS / RHEL / Fedora Linux)
+
+vim /etc/ssh/sshd_config
+
+sudo service ssh restart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
