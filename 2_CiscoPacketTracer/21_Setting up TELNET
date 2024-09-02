@@ -1,0 +1,88 @@
+21_Setting up TELNET
+
+****Switch****
+
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int fa0/1
+Switch(config-if)#interface vlan 1
+Switch(config-if)#no sh
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+Switch(config-if)#ip address 192.168.0.2
+% Incomplete command.
+Switch(config-if)#ip address 192.168.0.2 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#line vty 0 5
+Switch(config-line)#password 3366
+Switch(config-line)#login
+Switch(config-line)#enable secret 6699
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#
+****
+
+****PC-client****
+
+telnet ip_address
+telnet 192.168.0.2
+****
+
+****Router****
+
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#line vty 0 5
+Router(config-line)#password 3366
+Router(config-line)#login
+Router(config-line)#enable secret 6699
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#int fa0/0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+%SYS-5-CONFIG_I: Configured from console by console
+****
+
+
+
