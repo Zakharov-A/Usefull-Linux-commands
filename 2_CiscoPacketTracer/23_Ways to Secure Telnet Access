@@ -1,0 +1,50 @@
+23_Ways to Secure Telnet Access
+
+####PC1####
+
+show running-config
+
+####Switch1####
+
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int vlan 1
+Switch(config-if)#no sh
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+Switch(config-if)#ip addr 192.168.0.2 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#line vty 0 4
+Switch(config-line)#user student privilege 1 password 3366
+Switch(config)#user admin privilege 15 password 6699
+Switch(config)#line vty 0 4 
+Switch(config-line)#login local
+Switch(config-line)#exit
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#user iam privilege 15 password 6699
+Switch(config)#exit
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#user iam privilege 15 secret 6699
+ERROR: Can not have both a user password and a user secret.
+Please choose one or the other.
+Switch(config)#user iam2 privilege 15 secret 6699
+Switch(config)#exit
+Switch#
+

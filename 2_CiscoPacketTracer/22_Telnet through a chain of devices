@@ -1,0 +1,57 @@
+22_Telnet through a chain of devices
+
+####PC1####
+ip address 192.168.0.1 255.255.255.0
+
+####Switch1####
+
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname 1sw
+1sw(config)#interface fa0/1
+1sw(config-if)#interface vlan 1
+1sw(config-if)#no sh
+
+1sw(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+1sw(config-if)#ip address 192.168.0.2 255.255.255.0
+1sw(config-if)#exit
+1sw(config)#line vty 0 4
+1sw(config-line)#password 3366
+1sw(config-line)#login
+1sw(config-line)#enable secret 6699
+1sw(config)#exit
+1sw#
+
+####Switch2####
+
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname 2sw
+2sw(config)#interface fa0/1
+2sw(config-if)#int vlan 1
+2sw(config-if)#no sh
+
+2sw(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+2sw(config-if)#ip address 192.168.0.3 255.255.255.0
+2sw(config-if)#exit
+2sw(config)#line vty 0 4
+2sw(config-line)#password 3366
+2sw(config-line)#login
+2sw(config-line)#enable secret 6699
+2sw(config)#exit
+2sw#
+%SYS-5-CONFIG_I: Configured from console by console
+
+2sw#
+
+
